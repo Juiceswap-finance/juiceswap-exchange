@@ -7,7 +7,6 @@ import { RowBetween } from '../Row'
 import { TYPE, ExternalLink, CloseIcon, CustomLightSpinner, UniTokenAnimated } from '../../theme'
 import { ButtonPrimary } from '../Button'
 import { useClaimCallback, useUserUnclaimedAmount, useUserHasAvailableClaim } from '../../state/claim/hooks'
-import tokenLogo from '../../assets/images/token-logo.png'
 import Circle from '../../assets/images/blue-loader.svg'
 import { Text } from 'rebass'
 import AddressInputPanel from '../AddressInputPanel'
@@ -145,7 +144,7 @@ export default function AddressClaimModal({ isOpen, onDismiss }: { isOpen: boole
             {!claimConfirmed ? (
               <CustomLightSpinner src={Circle} alt="loader" size={'90px'} />
             ) : (
-              <UniTokenAnimated width="72px" src={tokenLogo} />
+              <UniTokenAnimated width="72px" src={''} />
             )}
           </ConfirmedIcon>
           <AutoColumn gap="100px" justify={'center'}>

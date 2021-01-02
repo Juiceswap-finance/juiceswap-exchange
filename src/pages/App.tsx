@@ -55,6 +55,7 @@ const BodyWrapper = styled.div`
   overflow-y: auto;
   overflow-x: hidden;
   z-index: 10;
+  margin-top: 90px;
 
   ${({ theme }) => theme.mediaWidth.upToSmall`
     padding: 16px;

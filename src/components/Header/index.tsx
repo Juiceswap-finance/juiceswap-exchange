@@ -32,6 +32,7 @@ import Modal from '../Modal'
 import UniBalanceContent from './UniBalanceContent'
 import usePrevious from '../../hooks/usePrevious'
 
+
 const HeaderFrame = styled.div`
   display: grid;
   grid-template-columns: 1fr 120px;
@@ -115,7 +116,7 @@ const AccountElement = styled.div<{ active: boolean }>`
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: ${({ theme, active }) => (!active ? theme.bg1 : theme.bg3)};
+  background-color: #cfeef3;
   border-radius: 12px;
   white-space: nowrap;
   width: 100%;
@@ -134,7 +135,7 @@ const UNIAmount = styled(AccountElement)`
   padding: 4px 8px;
   height: 36px;
   font-weight: 500;
-  background: linear-gradient(90deg,rgb(210 44 132) 0%,rgb(249 89 204) 100%);
+  background: linear-gradient(90deg, rgb(93 247 242) 0%, rgb(195 229 249) 100%);
 `
 
 const UNIWrapper = styled.span`
@@ -160,6 +161,7 @@ const HideSmall = styled.span`
 const NetworkCard = styled(YellowCard)`
   border-radius: 12px;
   padding: 8px 12px;
+  
   ${({ theme }) => theme.mediaWidth.upToSmall`
     margin: 0;
     margin-right: 0.5rem;
@@ -182,6 +184,7 @@ const Title = styled.a`
   pointer-events: auto;
   justify-self: flex-start;
   margin-right: 12px;
+  margin-top: -6px;
   ${({ theme }) => theme.mediaWidth.upToSmall`
     justify-self: center;
   `};
@@ -192,9 +195,6 @@ const Title = styled.a`
 
 const UniIcon = styled.div`
   transition: transform 0.3s ease;
-  :hover {
-    transform: rotate(-5deg);
-  }
 `
 
 const activeClassName = 'ACTIVE'
@@ -250,6 +250,7 @@ const StyledExternalLink = styled(ExternalLink).attrs({
   :hover,
   :focus {
     color: ${({ theme }) => darken(0.1, theme.text1)};
+    text-decoration: none;
   }
 
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
@@ -315,7 +316,7 @@ export default function Header() {
           >
             {t('pool')}
           </StyledNavLink>
-          <a className={`${darkMode?'sc-qrIAp ebAwSE':'sc-qrIAp bZPGFH'}`} id={`swap-nav-link`} target="_blank"  href={"//www.forbitswap.com"}>
+            <a className={`${darkMode?'sc-qrIAp ebAwSE':'sc-qrIAp bZPGFH'}`} id={`swap-nav-link`} target="_blank"  href={"//www.juiceswap.finance/farms"}>
             Yeild Farm
           </a>
           {/* <StyledNavLink id={`stake-nav-link`} to={'/uni'}>
@@ -325,10 +326,10 @@ export default function Header() {
           {/* <StyledExternalLink id={`stake-nav-link`} target="_blank" href={'https://forbitswap.com/'}>
             Space Discovery
           </StyledExternalLink> */}
-          <StyledNavLink id={`stake-nav-link`} to={'/vote'}>
+          <StyledExternalLink id={`stake-nav-link`} href={"//www.juiceswap.finance/Reclamation"}>
             Reclamation
-          </StyledNavLink>
-          <StyledExternalLink id={`stake-nav-link`} href={'/#'}>Staking</StyledExternalLink>
+          </StyledExternalLink>
+          <StyledExternalLink id={`stake-nav-link`} href={'//www.juiceswap.finance/Staking'}>Staking</StyledExternalLink>
         </HeaderLinks>
       </HeaderRow>
       <HeaderControls>
@@ -369,7 +370,7 @@ export default function Header() {
                     </TYPE.white>
                   </HideSmall>
                 )}
-                FBT
+                JUS
               </UNIAmount>
               <CardNoise />
             </UNIWrapper>

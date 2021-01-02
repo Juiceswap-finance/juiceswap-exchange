@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react'
 import { Text } from 'rebass'
 import styled from 'styled-components'
 import Circle from '../../assets/images/blue-loader.svg'
-import tokenLogo from '../../assets/images/token-logo.png'
 import { useActiveWeb3React } from '../../hooks'
 import { ApplicationModal } from '../../state/application/actions'
 import { useModalOpen, useToggleSelfClaimModal } from '../../state/application/hooks'
@@ -164,7 +163,7 @@ export default function ClaimModal() {
             {!claimConfirmed ? (
               <CustomLightSpinner src={Circle} alt="loader" size={'90px'} />
             ) : (
-              <UniTokenAnimated width="72px" src={tokenLogo} />
+              <UniTokenAnimated width="72px" src={''} />
             )}
           </ConfirmedIcon>
           <AutoColumn gap="100px" justify={'center'}>

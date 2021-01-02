@@ -1,9 +1,6 @@
 import styled from 'styled-components'
 import { AutoColumn } from '../Column'
 
-import uImage from '../../assets/images/big_unicorn.png'
-import xlUnicorn from '../../assets/images/xl_uni.png'
-import noise from '../../assets/images/noise.png'
 
 export const TextBox = styled.div`
   display: flex;
@@ -17,15 +14,18 @@ export const TextBox = styled.div`
 `
 
 export const DataCard = styled(AutoColumn)<{ disabled?: boolean }>`
-  background: radial-gradient(76.02% 75.41% at 1.84% 0%, #ff007a 0%, #2172e5 100%);
   border-radius: 12px;
   width: 100%;
   position: relative;
   overflow: hidden;
+  // max-width: 420px;
+  // height: 216px;
+  margin: 0 auto;
+  box-shadow: rgba(0, 0, 0, 0.75) 0px 7px 6px -4px;
 `
 
 export const CardBGImage = styled.span<{ desaturate?: boolean }>`
-  background: url(${uImage});
+  // background: linear-gradient(to right, rgb(84, 51, 255), rgb(32, 189, 255), rgb(165, 254, 203));
   width: 1000px;
   height: 600px;
   position: absolute;
@@ -36,11 +36,12 @@ export const CardBGImage = styled.span<{ desaturate?: boolean }>`
   transform: rotate(-15deg);
   user-select: none;
 
+
   ${({ desaturate }) => desaturate && `filter: saturate(0)`}
 `
 
 export const CardBGImageSmaller = styled.span<{ desaturate?: boolean }>`
-  background: url(${xlUnicorn});
+  background: url(${''});
   width: 1200px;
   height: 1200px;
   position: absolute;
@@ -54,7 +55,6 @@ export const CardBGImageSmaller = styled.span<{ desaturate?: boolean }>`
 `
 
 export const CardNoise = styled.span`
-  background: url(${noise});
   background-size: cover;
   mix-blend-mode: overlay;
   border-radius: 12px;

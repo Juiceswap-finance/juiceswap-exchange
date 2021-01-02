@@ -16,7 +16,7 @@ const Base = styled(RebassButton)<{
   width: ${({ width }) => (width ? width : '100%')};
   font-weight: 500;
   text-align: center;
-  border-radius: 12px;
+  border-radius: 16px;
   border-radius: ${({ borderRadius }) => borderRadius && borderRadius};
   outline: none;
   border: 1px solid transparent;
@@ -29,6 +29,7 @@ const Base = styled(RebassButton)<{
   cursor: pointer;
   position: relative;
   z-index: 1;
+
   &:disabled {
     cursor: auto;
   }
@@ -39,21 +40,21 @@ const Base = styled(RebassButton)<{
 `
 
 export const ButtonPrimary = styled(Base)`
-  background-color: ${({ theme }) => theme.primary1};
-  color: white;
+  background: linear-gradient(to right,rgb(77 160 250),rgb(87 193 252),rgb(104 208 250));
+  color: #ffffff;
   &:focus {
     box-shadow: 0 0 0 1pt ${({ theme }) => darken(0.05, theme.primary1)};
     background-color: ${({ theme }) => darken(0.05, theme.primary1)};
   }
   &:hover {
-    background-color: ${({ theme }) => darken(0.05, theme.primary1)};
+    background: linear-gradient(90deg, rgb(85 247 242) 0%, rgb(195 229 249) 100%)
   }
   &:active {
     box-shadow: 0 0 0 1pt ${({ theme }) => darken(0.1, theme.primary1)};
-    background-color: ${({ theme }) => darken(0.1, theme.primary1)};
+    background: linear-gradient(90deg, rgb(85 247 242) 0%, rgb(195 229 249) 100%)
   }
   &:disabled {
-    background-color: ${({ theme, altDisabledStyle }) => (altDisabledStyle ? theme.primary1 : theme.bg3)};
+    background: ${({ theme, altDisabledStyle }) => (altDisabledStyle ? theme.primary1 : theme.bg3)};
     color: ${({ theme, altDisabledStyle }) => (altDisabledStyle ? 'white' : theme.text3)};
     cursor: auto;
     box-shadow: none;
@@ -204,7 +205,7 @@ export const ButtonEmpty = styled(Base)`
 export const ButtonWhite = styled(Base)`
   border: 1px solid #edeef2;
   background-color: ${({ theme }) => theme.bg1};
-  color: black;
+  color: #fff;
 
   &:focus {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars

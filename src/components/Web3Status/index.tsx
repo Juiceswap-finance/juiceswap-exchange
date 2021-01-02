@@ -6,8 +6,6 @@ import { Activity } from 'react-feather'
 import { useTranslation } from 'react-i18next'
 import styled, { css } from 'styled-components'
 import CoinbaseWalletIcon from '../../assets/images/coinbaseWalletIcon.svg'
-import FortmaticIcon from '../../assets/images/fortmaticIcon.png'
-import PortisIcon from '../../assets/images/portisIcon.png'
 import WalletConnectIcon from '../../assets/images/walletConnectIcon.svg'
 import { fortmatic, injected, portis, walletconnect, walletlink } from '../../connectors'
 import { NetworkContextName } from '../../constants'
@@ -86,7 +84,7 @@ const Web3StatusConnect = styled(Web3StatusGeneric)<{ faded?: boolean }>`
 `
 
 const Web3StatusConnected = styled(Web3StatusGeneric)<{ pending?: boolean }>`
-  background-color: ${({ pending, theme }) => (pending ? theme.primary1 : theme.bg2)};
+  background-color: #bff9ffde;
   border: 1px solid ${({ pending, theme }) => (pending ? theme.primary1 : theme.bg3)};
   color: ${({ pending, theme }) => (pending ? theme.white : theme.text1)};
   font-weight: 500;
@@ -148,13 +146,13 @@ function StatusIcon({ connector }: { connector: AbstractConnector }) {
   } else if (connector === fortmatic) {
     return (
       <IconWrapper size={16}>
-        <img src={FortmaticIcon} alt={''} />
+        <img src={''} alt={''} />
       </IconWrapper>
     )
   } else if (connector === portis) {
     return (
       <IconWrapper size={16}>
-        <img src={PortisIcon} alt={''} />
+        <img src={''} alt={''} />
       </IconWrapper>
     )
   }

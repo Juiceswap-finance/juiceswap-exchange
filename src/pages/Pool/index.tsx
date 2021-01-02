@@ -26,7 +26,7 @@ const PageWrapper = styled(AutoColumn)`
 `
 
 const VoteCard = styled(DataCard)`
-  background: radial-gradient(76.02% 75.41% at 1.84% 0%, #27ae60 0%, #000000 100%);
+  background: linear-gradient(90deg, rgb(93 247 242) 0%, rgb(195 229 249) 100%);
   overflow: hidden;
 `
 
@@ -113,25 +113,25 @@ export default function Pool() {
       <PageWrapper>
         <SwapPoolTabs active={'pool'} />
 
-        <VoteCard>
+        <VoteCard style={{ width: '420px', height: '216px' }}>
           <CardBGImage />
           <CardNoise />
-          <CardSection>
+          <CardSection style={{ background: 'linear-gradient(to right, rgb(78 166 251), rgb(94 199 252), rgb(190 255 218))' }}>
             <AutoColumn gap="md">
               <RowBetween>
-                <TYPE.white fontWeight={600}>Liquidity provider rewards</TYPE.white>
+                <TYPE.white color="#ffffff" fontWeight={600}>Liquidity provider rewards</TYPE.white>
               </RowBetween>
               <RowBetween>
-                <TYPE.white fontSize={14}>
+                <TYPE.white color="#ffffff" fontSize={14}>
                   {`Liquidity providers earn a 0.3% fee on all trades proportional to their share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity.`}
                 </TYPE.white>
               </RowBetween>
               <ExternalLink
-                style={{ color: 'white', textDecoration: 'underline' }}
+                style={{ color: 'white'}}
                 target="_blank"
-                href="https://forbitswap.org/docs/v2/core-concepts/pools/"
+                href="#"
               >
-                <TYPE.white fontSize={14}>Read more about providing liquidity</TYPE.white>
+                <TYPE.white color="#ffffff" fontSize={14}>Read more about providing liquidity</TYPE.white>
               </ExternalLink>
             </AutoColumn>
           </CardSection>
@@ -139,14 +139,15 @@ export default function Pool() {
           <CardNoise />
         </VoteCard>
 
-        <AutoColumn gap="lg" justify="center">
+        <AutoColumn gap="lg" justify="center" style={{ width:'420px', margin: '30px auto auto' }}>
           <AutoColumn gap="lg" style={{ width: '100%' }}>
             <TitleRow style={{ marginTop: '1rem' }} padding={'0'}>
-              <HideSmall>
-                <TYPE.mediumHeader style={{ marginTop: '0.5rem', justifySelf: 'flex-start' }}>
-                  Your liquidity
-                </TYPE.mediumHeader>
-              </HideSmall>
+            <HideSmall>
+              <TYPE.mediumHeader style={{ justifySelf: 'flex-start' }}>
+                Your liquidity
+              </TYPE.mediumHeader>
+            </HideSmall>
+
               <ButtonRow>
                 <ResponsiveButtonSecondary as={Link} padding="6px 8px" to="/create/ETH">
                   Create a pair

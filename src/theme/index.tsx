@@ -61,8 +61,8 @@ export function colors(darkMode: boolean): Colors {
     //primary colors
     primary1: darkMode ? '#2172E5' : '#11d03d',
     primary2: darkMode ? '#3680E7' : '#FF8CC3',
-    primary3: darkMode ? '#4D8FEA' : '#FF99C9',
-    primary4: darkMode ? '#376bad70' : '#F6DDE8',
+    primary3: darkMode ? '#4D8FEA' : '#D1EFF4',
+    primary4: darkMode ? '#376bad70' : '#c1eef3',
     primary5: darkMode ? '#153d6f70' : '#f1f0f0',
 
     // color text
@@ -78,9 +78,9 @@ export function colors(darkMode: boolean): Colors {
     red2: '#F82D3A',
     green1: '#27AE60',
     yellow1: '#FFE270',
-    yellow2: '#F3841E',
+    yellow2: '#000',
     blue1: '#2172E5',
-    gradient: 'linear-gradient(90deg,rgb(210 44 132) 0%,rgb(249 89 204) 100%)',
+    gradient: 'linear-gradient(90deg, rgb(93 247 242) 0%, rgb(195 229 249) 100%)',
 
     // dont wanna forget these blue yet
     // blue4: darkMode ? '#153d6f70' : '#C4D9F8',

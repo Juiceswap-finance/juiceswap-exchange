@@ -2,7 +2,7 @@ import { ChainId, TokenAmount } from '@forbitswap/sdk'
 import React, { useMemo } from 'react'
 import { X } from 'react-feather'
 import styled from 'styled-components'
-import tokenLogo from '../../assets/images/forbit.png'
+import tokenLogo from '../../assets/images/logo-sm.png'
 import { UNI } from '../../constants'
 import { useTotalSupply } from '../../data/TotalSupply'
 import { useActiveWeb3React } from '../../hooks'
@@ -22,8 +22,8 @@ const ContentWrapper = styled(AutoColumn)`
 `
 
 const ModalUpper = styled(DataCard)`
+  background: linear-gradient(90deg, rgb(93 247 242) 0%, rgb(195 229 249) 100%);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  background: radial-gradient(76.02% 75.41% at 1.84% 0%, #0fb836 0%, #021d43 100%);
   padding: 0.5rem;
 `
 
@@ -62,13 +62,13 @@ export default function UniBalanceContent({ setShowUniBalanceModal }: { setShowU
 
   return (
     <ContentWrapper gap="lg">
-      <ModalUpper>
+      <ModalUpper style={{ background: 'linear-gradient(90deg,rgb(93 247 242) 0%,rgb(195 229 249) 100%)' }}>
         <CardBGImage />
         <CardNoise />
         <CardSection gap="md">
           <RowBetween>
-            <TYPE.white color="white">Your FBT Breakdown</TYPE.white>
-            <StyledClose stroke="white" onClick={() => setShowUniBalanceModal(false)} />
+            <TYPE.white color="#565A69">Your JUS Breakdown</TYPE.white>
+            <StyledClose stroke="#565A69" onClick={() => setShowUniBalanceModal(false)} />
           </RowBetween>
         </CardSection>
         <Break />
@@ -76,19 +76,19 @@ export default function UniBalanceContent({ setShowUniBalanceModal }: { setShowU
           <>
             <CardSection gap="sm">
               <AutoColumn gap="md" justify="center">
-                <UniTokenAnimated width="48px" src={tokenLogo} />{' '}
-                <TYPE.white fontSize={48} fontWeight={600} color="white">
+                <UniTokenAnimated width="80px" src={tokenLogo} />{' '}
+                <TYPE.white fontSize={48} fontWeight={600} color="#565A69">
                   {total?.toFixed(2, { groupSeparator: ',' })}
                 </TYPE.white>
               </AutoColumn>
               <AutoColumn gap="md">
                 <RowBetween>
-                  <TYPE.white color="white">Balance:</TYPE.white>
-                  <TYPE.white color="white">{uniBalance?.toFixed(2, { groupSeparator: ',' })}</TYPE.white>
+                  <TYPE.white color="#565A69">Balance:</TYPE.white>
+                  <TYPE.white color="#565A69">{uniBalance?.toFixed(2, { groupSeparator: ',' })}</TYPE.white>
                 </RowBetween>
                 <RowBetween>
-                  <TYPE.white color="white">Unclaimed:</TYPE.white>
-                  <TYPE.white color="white">
+                  <TYPE.white color="#565A69">Unclaimed:</TYPE.white>
+                  <TYPE.white color="#565A69">
                     {uniToClaim?.toFixed(4, { groupSeparator: ',' })}{' '}
                     {uniToClaim && uniToClaim.greaterThan('0') && (
                       <StyledInternalLink onClick={() => setShowUniBalanceModal(false)} to="/uni">
@@ -105,19 +105,19 @@ export default function UniBalanceContent({ setShowUniBalanceModal }: { setShowU
         <CardSection gap="sm">
           <AutoColumn gap="md">
             <RowBetween>
-              <TYPE.white color="white">FBT price:</TYPE.white>
-              <TYPE.white color="white">${uniPrice?.toFixed(2) ?? '-'}</TYPE.white>
+              <TYPE.white color="#565A69">JUS price:</TYPE.white>
+              <TYPE.white color="#565A69">${uniPrice?.toFixed(2) ?? '-'}</TYPE.white>
             </RowBetween>
             <RowBetween>
-              <TYPE.white color="white">FBT in circulation:</TYPE.white>
-              <TYPE.white color="white">{circulation?.toFixed(0, { groupSeparator: ',' })}</TYPE.white>
+              <TYPE.white color="#565A69">JUS in circulation:</TYPE.white>
+              <TYPE.white color="#565A69">{circulation?.toFixed(0, { groupSeparator: ',' })}</TYPE.white>
             </RowBetween>
             <RowBetween>
-              <TYPE.white color="white">Total Supply</TYPE.white>
-              <TYPE.white color="white">{totalSupply?.toFixed(0, { groupSeparator: ',' })}</TYPE.white>
+              <TYPE.white color="#565A69">Total Supply</TYPE.white>
+              <TYPE.white color="#565A69">{totalSupply?.toFixed(0, { groupSeparator: ',' })}</TYPE.white>
             </RowBetween>
             {uni && uni.chainId === ChainId.MAINNET ? (
-              <ExternalLink href={`https://forbitswap.info/token/${uni.address}`}>View FBT Analytics</ExternalLink>
+              <ExternalLink href={`https://forbitswap.info/token/${uni.address}`}>View JUS Analytics</ExternalLink>
             ) : null}
           </AutoColumn>
         </CardSection>

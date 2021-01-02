@@ -104,18 +104,9 @@ const StyledLink = styled.a`
   }
 `
 
-const rotateImg = keyframes`
-  0% {
-    transform: perspective(1000px) rotateY(0deg);
-  }
-
-  100% {
-    transform: perspective(1000px) rotateY(360deg);
-  }
-`
 
 export const UniTokenAnimated = styled.img`
-  animation: ${rotateImg} 5s cubic-bezier(0.83, 0, 0.17, 1) infinite;
+  animation: none;
   padding: 2rem 0 0 0;
   filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.15));
 `
@@ -165,7 +156,7 @@ export const Spinner = styled.img`
 `
 
 const BackArrowLink = styled(StyledInternalLink)`
-  color: ${({ theme }) => theme.text1};
+  color: #fff !important;
 `
 export function BackArrow({ to }: { to: string }) {
   return (

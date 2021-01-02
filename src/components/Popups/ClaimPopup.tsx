@@ -2,7 +2,6 @@ import { TokenAmount } from '@forbitswap/sdk'
 import React, { useEffect } from 'react'
 import { X } from 'react-feather'
 import styled, { keyframes } from 'styled-components'
-import tokenLogo from '../../assets/images/token-logo.png'
 import { ButtonPrimary } from '../../components/Button'
 import { useActiveWeb3React } from '../../hooks'
 import { ApplicationModal } from '../../state/application/actions'
@@ -19,7 +18,7 @@ import { AutoColumn } from '../Column'
 import { CardBGImage, CardNoise } from '../earn/styled'
 
 const StyledClaimPopup = styled(AutoColumn)`
-  background: radial-gradient(76.02% 75.41% at 1.84% 0%, #ff007a 0%, #021d43 100%);
+ 
   border-radius: 20px;
   padding: 1.5rem;
   overflow: hidden;
@@ -84,7 +83,7 @@ export default function ClaimPopup() {
           <CardNoise />
           <StyledClose stroke="white" onClick={toggleShowClaimPopup} />
           <AutoColumn style={{ padding: '2rem 0', zIndex: 10 }} justify="center">
-            <UniToken width="48px" src={tokenLogo} />{' '}
+            <UniToken width="48px" src={''} />{' '}
             <TYPE.white style={{ marginTop: '1rem' }} fontSize={36} fontWeight={600}>
               {unclaimedAmount?.toFixed(0, { groupSeparator: ',' } ?? '-')} UNI
             </TYPE.white>

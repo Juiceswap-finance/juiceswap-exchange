@@ -32,6 +32,8 @@ import Modal from '../Modal'
 import UniBalanceContent from './UniBalanceContent'
 import usePrevious from '../../hooks/usePrevious'
 
+import { Navbar, NavbarToggler, Collapse, Nav } from 'reactstrap'
+
 
 const HeaderFrame = styled.div`
   display: grid;
@@ -106,6 +108,7 @@ const HeaderRow = styled(RowFixed)`
 
 const HeaderLinks = styled(Row)`
   justify-content: center;
+
   ${({ theme }) => theme.mediaWidth.upToMedium`
     padding: 1rem 0 1rem 1rem;
     justify-content: flex-end;
@@ -185,6 +188,7 @@ const Title = styled.a`
   justify-self: flex-start;
   margin-right: 12px;
   margin-top: -6px;
+
   ${({ theme }) => theme.mediaWidth.upToSmall`
     justify-self: center;
   `};
@@ -195,6 +199,16 @@ const Title = styled.a`
 
 const UniIcon = styled.div`
   transition: transform 0.3s ease;
+
+  @media (max-width: 768px) {
+    margin-left: 16px;
+  }
+
+  img {
+    @media (max-width: 768px) {
+      transform: scale(0.8);
+    }
+  }
 `
 
 const activeClassName = 'ACTIVE'
@@ -252,10 +266,233 @@ const StyledExternalLink = styled(ExternalLink).attrs({
     color: ${({ theme }) => darken(0.1, theme.text1)};
     text-decoration: none;
   }
+`
 
-  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
-      display: none;
-`}
+const StyledNav = styled(Navbar)`
+  @media (max-width: 768px) {
+    background-color: transparent !important;
+    position: absolute;
+    top: 26px;
+    left: 7px;
+
+    @media (min-width: 768px) {
+      width: 18px;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .navbar-collapse {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      z-index: 10;
+      background-color: rgba(4, 4, 4, 0.5);
+      opacity: 0;
+      transition: opacity 0.2s;
+
+      @media (min-width: 768px) {
+        background-color: transparent;
+        opacity: 1;
+      }
+
+      &.show {
+        opacity: 1;
+
+        .navbar-nav {
+          width: 280px;
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+
+    .navbar-nav {
+      flex: 0 0 280px;
+      width: 0;
+      transition: width 0.5s;
+      position: absolute;
+      top: -30px;
+      left: 0;
+      bottom: 0;
+      overflow-y: auto;
+      background: #fff;
+      flex: 0 0 100%;
+      padding: 85px 15px 30px;
+
+      @media (min-width: 768px) {
+        width: auto;
+        top: 22px;
+        right: -194px;
+        left: auto;
+        background-color: transparent;
+        background: transparent;
+        transform: unset;
+        overflow-y: unset;
+        padding: 0;
+      }
+
+      @media (min-width: 991px) {
+        top: 30px;
+        right: -199px;
+      }
+
+      a {
+        padding-right: 10px;
+        padding-left: 10px;
+        font-weight: 600;
+        text-decoration: none;
+        margin-left: -15px;
+        margin-right: -15px;
+        padding: 10px 23px;
+        white-space: nowrap;
+
+        &:last-child {
+          border: none;
+        }
+
+        @media (min-width: 768px) {
+          border: none;
+          padding-right: 10px;
+          padding-left: 10px;
+          margin: 0;
+          background-color: transparent;
+          font-size: 12px;
+        }
+
+        @media (min-width: 991px) {
+          padding-right: 16px;
+          padding-left: 16px;
+          font-size: 16px;
+        }
+
+        &:after {
+          @media (min-width: 768px) {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #ddd;
+            transition: width 0.2s;
+          }
+        }
+
+        &:hover {
+          color: green;
+          font-weight: 600;
+          text-decoration: none;
+
+          &:after {
+            width: 100%;
+            background: green;
+          }
+        }
+
+        &.active {
+          color: green;
+          font-weight: 600;
+
+          &:after {
+            background: green;
+          }
+        }
+      }
+    }
+
+    .navbar-toggler {
+      border-color: transparent;
+      outline: none;
+      position: fixed;
+      z-index: 11;
+      display: block;
+
+      @media (max-width: 768px) {
+        padding: 9px;
+      }
+
+      &[aria-expanded='true'] {
+        .navbar-toggler-icon {
+          background-color: transparent;
+
+          &:before,
+          &:after {
+            top: auto;
+            bottom: 0;
+          }
+
+          &:before {
+            transform: rotate(-45deg);
+          }
+
+          &:after {
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+
+    .navbar-toggler-icon {
+      background-image: none;
+      width: 18px;
+      height: 1.6px;
+      position: absolute;
+      top: 8px;
+      left: 12px;
+      background: red;
+
+      @media (min-width: 768px) {
+        width: 23px;
+      }
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        display: inline-block;
+        width: 18px;
+        height: 1.6px;
+        transition: transform 400ms ease-in-out;
+        background: red
+
+        @media (min-width: 768px) {
+          width: 23px;
+        }
+      }
+
+      &:before {
+        top: -6px;
+
+        @media (min-width: 768px) {
+          top: -8px;
+        }
+      }
+
+      &:after {
+        bottom: -6px;
+
+        @media (min-width: 768px) {
+          bottom: -8px;
+        }
+      }
+    }
+  }
+
+  .navbar-toggler {
+    display: none;
+
+    @media (max-width: 768px) {
+      display: block;
+      background: transparent;
+    }
+  }
+
+  .navbar-nav {
+    display: flex;
+  }
 `
 
 const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
@@ -287,6 +524,14 @@ export default function Header() {
   const countUpValue = aggregateBalance?.toFixed(0) ?? '0'
   const countUpValuePrevious = usePrevious(countUpValue) ?? '0'
 
+  const [isOpen, setIsOpen] = useState(false)
+
+  const toggle = () => setIsOpen(!isOpen)
+
+  const [isAre, setAreaIsOpen] = useState(false)
+
+  const aria = () => setAreaIsOpen(!isAre)
+
   return (
     <HeaderFrame>
       <ClaimModal />
@@ -300,36 +545,44 @@ export default function Header() {
           </UniIcon>
         </Title>
         <HeaderLinks>
-          <StyledNavLink id={`swap-nav-link`} to={'/swap'}>
-            {t('swap')}
-          </StyledNavLink>
-          <StyledNavLink
-            id={`pool-nav-link`}
-            to={'/pool'}
-            isActive={(match, { pathname }) =>
-              Boolean(match) ||
-              pathname.startsWith('/add') ||
-              pathname.startsWith('/remove') ||
-              pathname.startsWith('/create') ||
-              pathname.startsWith('/find')
-            }
-          >
-            {t('pool')}
-          </StyledNavLink>
-            <a className={`${darkMode?'sc-qrIAp ebAwSE':'sc-qrIAp bZPGFH'}`} id={`swap-nav-link`} target="_blank"  href={"//www.juiceswap.finance/farms"}>
-            Yeild Farm
-          </a>
-          {/* <StyledNavLink id={`stake-nav-link`} to={'/uni'}>
-            FBT
-          </StyledNavLink> */}
-
-          {/* <StyledExternalLink id={`stake-nav-link`} target="_blank" href={'https://forbitswap.com/'}>
-            Space Discovery
-          </StyledExternalLink> */}
-          <StyledExternalLink id={`stake-nav-link`} href={"//www.juiceswap.finance/Reclamation"}>
-            Reclamation
-          </StyledExternalLink>
-          <StyledExternalLink id={`stake-nav-link`} href={'//www.juiceswap.finance/Staking'}>Staking</StyledExternalLink>
+          <StyledNav color="light" light expand="md">
+            <NavbarToggler
+              aria-expanded={isAre}
+              onClick={() => {
+                toggle()
+                aria()
+              }}
+            />
+            <Collapse isOpen={isOpen} navbar>
+              <Nav className="mr-auto" navbar>
+                <StyledNavLink id={`swap-nav-link`} to={'/swap'}>
+                    {t('swap')}
+                </StyledNavLink>
+                <StyledNavLink
+                  id={`pool-nav-link`}
+                  to={'/pool'}
+                  isActive={(match, { pathname }) =>
+                    Boolean(match) ||
+                    pathname.startsWith('/add') ||
+                    pathname.startsWith('/remove') ||
+                    pathname.startsWith('/create') ||
+                    pathname.startsWith('/find')
+                  }
+                >
+                  {t('pool')}
+                </StyledNavLink>
+                  <a className={`${darkMode?'sc-qrIAp ebAwSE':'sc-qrIAp bZPGFH'}`} id={`swap-nav-link`} target="_blank"  href={"//www.juiceswap.finance/farms"}>
+                    Yeild Farm
+                  </a>
+                <StyledExternalLink id={`stake-nav-link`} href={"//www.juiceswap.finance/Reclamation"}>
+                  Reclamation
+                </StyledExternalLink>
+                <StyledExternalLink id={`stake-nav-link`} href={'//www.juiceswap.finance/Staking'}>
+                  Staking
+                </StyledExternalLink>
+              </Nav>
+            </Collapse>
+          </StyledNav>
         </HeaderLinks>
       </HeaderRow>
       <HeaderControls>

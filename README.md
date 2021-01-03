@@ -9,7 +9,7 @@ An open source interface for Jusswap -- a protocol for decentralized exchange of
 - Website: [juiceswap.finance](https://juiceswap.finance/)
 - Interface: [app.juiceswap.com](https://app.juiceswap.finance)
 - Docs: [juiceswap.finance/docs/](https://jusswap.com/docs/)
-- Twitter: [@JusswapProtocol](https://twitter.com/JusswapProtocol)
+- Twitter: [@JuiceswapProtocol](https://twitter.com/JuiceswapProtocol)
 - Reddit: [/r/juiceswap](https://www.reddit.com/r/juiceswap/)
 - Email: [contact@juiceswap.com](mailto:contact@jusswap.finance)
 - Discord: [juiceswap](https://discord.gg/Y7TF6QA)

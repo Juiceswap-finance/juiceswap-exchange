@@ -112,34 +112,36 @@ export default function Pool() {
     <>
       <PageWrapper>
         <SwapPoolTabs active={'pool'} />
+        <BoxColumn>
+          <VoteCard>
+            <CardBGImage />
+            <CardNoise />
+            <CardSection style={{ background: 'linear-gradient(to right, rgb(78 166 251), rgb(94 199 252), rgb(190 255 218))' }}>
+              <AutoColumn gap="md">
+                <RowBetween>
+                  <TYPE.white color="#ffffff" fontWeight={600}>Liquidity provider rewards</TYPE.white>
+                </RowBetween>
+                <RowBetween>
+                  <TYPE.white color="#ffffff" fontSize={14}>
+                    {`Liquidity providers earn a 0.3% fee on all trades proportional to their share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity.`}
+                  </TYPE.white>
+                </RowBetween>
+                <ExternalLink
+                  style={{ color: 'white'}}
+                  target="_blank"
+                  href="#"
+                >
+                  <TYPE.white color="#ffffff" fontSize={14}>Read more about providing liquidity</TYPE.white>
+                </ExternalLink>
+              </AutoColumn>
+            </CardSection>
+            <CardBGImage />
+            <CardNoise />
+          </VoteCard>
+        </BoxColumn>
 
-        <VoteCard style={{ width: '420px', height: '216px' }}>
-          <CardBGImage />
-          <CardNoise />
-          <CardSection style={{ background: 'linear-gradient(to right, rgb(78 166 251), rgb(94 199 252), rgb(190 255 218))' }}>
-            <AutoColumn gap="md">
-              <RowBetween>
-                <TYPE.white color="#ffffff" fontWeight={600}>Liquidity provider rewards</TYPE.white>
-              </RowBetween>
-              <RowBetween>
-                <TYPE.white color="#ffffff" fontSize={14}>
-                  {`Liquidity providers earn a 0.3% fee on all trades proportional to their share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity.`}
-                </TYPE.white>
-              </RowBetween>
-              <ExternalLink
-                style={{ color: 'white'}}
-                target="_blank"
-                href="#"
-              >
-                <TYPE.white color="#ffffff" fontSize={14}>Read more about providing liquidity</TYPE.white>
-              </ExternalLink>
-            </AutoColumn>
-          </CardSection>
-          <CardBGImage />
-          <CardNoise />
-        </VoteCard>
-
-        <AutoColumn gap="lg" justify="center" style={{ width:'420px', margin: '30px auto auto' }}>
+        <AutoColumn gap="lg" justify="center">
+          <BoxColumn>
           <AutoColumn gap="lg" style={{ width: '100%' }}>
             <TitleRow style={{ marginTop: '1rem' }} padding={'0'}>
             <HideSmall>
@@ -204,8 +206,19 @@ export default function Pool() {
               </Text>
             </AutoColumn>
           </AutoColumn>
+          </BoxColumn>
         </AutoColumn>
       </PageWrapper>
     </>
   )
 }
+
+
+const BoxColumn = styled.div`
+  width: 100%;
+  margin: 30px auto auto;
+
+  @media (min-width: 768px) {
+    width: 420px;
+  }
+`

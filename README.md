@@ -7,24 +7,24 @@
 An open source interface for Jusswap -- a protocol for decentralized exchange of Ethereum tokens.
 
 - Website: [juiceswap.finance](https://juiceswap.finance/)
-- Interface: [app.jusswap.com](https://app.jusswap.com)
-- Docs: [jusswap.com/docs/](https://jusswap.com/docs/)
+- Interface: [app.juiceswap.com](https://app.juiceswap.finance)
+- Docs: [juiceswap.finance/docs/](https://jusswap.com/docs/)
 - Twitter: [@JusswapProtocol](https://twitter.com/JusswapProtocol)
-- Reddit: [/r/Jusswap](https://www.reddit.com/r/Jusswap/)
-- Email: [contact@jusswap.com](mailto:contact@jusswap.com)
-- Discord: [Jusswap](https://discord.gg/Y7TF6QA)
+- Reddit: [/r/juiceswap](https://www.reddit.com/r/juiceswap/)
+- Email: [contact@juiceswap.com](mailto:contact@jusswap.finance)
+- Discord: [juiceswap](https://discord.gg/Y7TF6QA)
 - Whitepaper: [Link](https://hackmd.io/C-DvwDSfSxuh-Gd4WKE_ig)
 
 ## Accessing the Jusswap Interface
 
 To access the Jusswap Interface, use an IPFS gateway link from the
-[latest release](https://github.com/Jusswap/jusswap-interface/releases/latest), 
-or visit [app.jusswap.com](https://app.juiceswap.finance).
+[latest release](https://github.com/juiceswap/juiceswap-interface/releases/latest), 
+or visit [app.juiceswap.com](https://app.juiceswap.finance).
 
 ## Listing a token
 
 Please see the
-[@jusswap/default-token-list](https://github.com/juiceswap.finance/default-token-list) 
+[@juiceswap/default-token-list](https://github.com/juiceswap.finance/default-token-list) 
 repository.
 
 ## Development
@@ -51,7 +51,7 @@ To have the interface default to a different network when a wallet is not connec
 
 Note that the interface only works on testnets where both 
 [Jusiceswap](https://juiceswap.finance/docs/smart-contracts/factory/) and 
-[multicall](https://github.com/makerdao/multicall) are deployed.
+[multicall](https://github.com/Juiceswap-finance) are deployed.
 The interface will not work on other networks.
 
 ## Contributions

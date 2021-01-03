@@ -6,7 +6,7 @@
 
 An open source interface for Jusswap -- a protocol for decentralized exchange of Ethereum tokens.
 
-- Website: [jusswap.com](https://jusswap.com/)
+- Website: [juiceswap.finance](https://juiceswap.finance/)
 - Interface: [app.jusswap.com](https://app.jusswap.com)
 - Docs: [jusswap.com/docs/](https://jusswap.com/docs/)
 - Twitter: [@JusswapProtocol](https://twitter.com/JusswapProtocol)

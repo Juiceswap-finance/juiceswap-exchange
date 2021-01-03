@@ -6,12 +6,12 @@
 
 An open source interface for Jusswap -- a protocol for decentralized exchange of Ethereum tokens.
 
-- Website: [jusswap.com](https://jusswap.com/)
-- Interface: [app.jusswap.com](https://app.jusswap.com)
-- Docs: [jusswap.com/docs/](https://jusswap.com/docs/)
-- Twitter: [@JusswapProtocol](https://twitter.com/JusswapProtocol)
-- Reddit: [/r/Jusswap](https://www.reddit.com/r/Jusswap/)
-- Email: [contact@jusswap.com](mailto:contact@jusswap.com)
+- Website: [jusswap.com](https://juiceswap.finance)
+- Interface: [app.jusswap.com](https://app.juiceswap.finance)
+- Docs: [jusswap.com/docs/](https://juiceswap.finance/docs/)
+- Twitter: [@JusswapProtocol](https://twitter.com/juiceswap-Protocol)
+- Reddit: [/r/Jusswap](https://www.reddit.com/r/juiceswap.finance)
+- Email: [contact@jusswap.com](mailto:contact@juiceswap.finance)
 - Discord: [Jusswap](https://discord.gg/Y7TF6QA)
 - Whitepaper: [Link](https://hackmd.io/C-DvwDSfSxuh-Gd4WKE_ig)
 
@@ -19,12 +19,12 @@ An open source interface for Jusswap -- a protocol for decentralized exchange of
 
 To access the Jusswap Interface, use an IPFS gateway link from the
 [latest release](https://github.com/Jusswap/jusswap-interface/releases/latest), 
-or visit [app.jusswap.com](https://app.jusswap.com).
+or visit [app.jusswap.com](https://app.juiceswap.finance).
 
 ## Listing a token
 
 Please see the
-[@jusswap/default-token-list](https://github.com/jusswap/default-token-list) 
+[@jusswap/default-token-list](https://github.com/juiceswap.finance/default-token-list) 
 repository.
 
 ## Development

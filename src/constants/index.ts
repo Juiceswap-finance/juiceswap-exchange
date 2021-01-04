@@ -108,7 +108,7 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
   INJECTED: {
     connector: injected,
     name: 'Injected',
-    iconName: '',
+    iconName: 'arrow-right.svg',
     description: 'Injected web3 provider.',
     href: null,
     color: '#010101',
@@ -117,7 +117,7 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
   METAMASK: {
     connector: injected,
     name: 'MetaMask',
-    iconName: '',
+    iconName: 'metamask.png',
     description: 'Easy-to-use browser extension.',
     href: null,
     color: '#E8831D'
@@ -134,14 +134,14 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
   WALLET_LINK: {
     connector: walletlink,
     name: 'Coinbase Wallet',
-    iconName: '',
+    iconName: 'coinbaseWalletIcon.svg',
     description: 'Use Coinbase Wallet app on mobile device',
     href: null,
     color: '#315CF5'
   },
   COINBASE_LINK: {
     name: 'Open in Coinbase Wallet',
-    iconName: '',
+    iconName: 'coinbaseWalletIcon.svg',
     description: 'Open in Coinbase Wallet app.',
     href: 'https://go.cb-w.com/mtUDhEZPy1',
     color: '#315CF5',
@@ -151,7 +151,7 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
   FORTMATIC: {
     connector: fortmatic,
     name: 'Fortmatic',
-    iconName: '',
+    iconName: 'fortmaticIcon.png',
     description: 'Login using Fortmatic hosted wallet',
     href: null,
     color: '#6748FF',
@@ -160,7 +160,7 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
   Portis: {
     connector: portis,
     name: 'Portis',
-    iconName: '',
+    iconName: 'portisIcon.png',
     description: 'Login using Portis hosted wallet',
     href: null,
     color: '#4A6C9B',

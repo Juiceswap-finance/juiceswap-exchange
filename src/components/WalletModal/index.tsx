@@ -226,7 +226,7 @@ export default function WalletModal({
               link={option.href}
               header={option.name}
               subheader={null}
-              icon={''}
+              icon={require('../../assets/images/' + option.iconName)}
             />
           )
         }
@@ -280,7 +280,7 @@ export default function WalletModal({
             link={option.href}
             header={option.name}
             subheader={null} //use option.descriptio to bring back multi-line
-            icon={''}
+            icon={require('../../assets/images/' + option.iconName)}
           />
         )
       )

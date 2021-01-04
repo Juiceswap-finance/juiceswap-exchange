@@ -75,6 +75,6 @@ export const CardSection = styled(AutoColumn)<{ disabled?: boolean }>`
 
 export const Break = styled.div`
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgb(255 255 255 / 39%);
   height: 1px;
 `

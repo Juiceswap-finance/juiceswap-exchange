@@ -191,7 +191,7 @@ const WalletAction = styled(ButtonSecondary)`
   
   :hover {
     cursor: pointer;
-    text-decoration: underline;
+    text-decoration: none;
   }
 `
 

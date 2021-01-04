@@ -572,7 +572,7 @@ export default function Header() {
                   {t('pool')}
                 </StyledNavLink>
                   <a className={`${darkMode?'sc-qrIAp ebAwSE':'sc-qrIAp bZPGFH'}`} id={`swap-nav-link`} target="_blank"  href={"//www.juiceswap.finance/farms"}>
-                    Yeild Farm
+                    Yield Farm
                   </a>
                 <StyledExternalLink id={`stake-nav-link`} href={"//www.juiceswap.finance/Reclamation"}>
                   Reclamation

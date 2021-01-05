@@ -226,7 +226,7 @@ export default function WalletModal({
               link={option.href}
               header={option.name}
               subheader={null}
-              icon={require('../../assets/images/' + option.iconName)}
+              icon={''}
             />
           )
         }
@@ -246,7 +246,7 @@ export default function WalletModal({
                 header={'Install Metamask'}
                 subheader={null}
                 link={'https://metamask.io/'}
-                icon={require('../../assets/images/' + option.iconName)}
+                icon={''}
               />
             )
           } else {

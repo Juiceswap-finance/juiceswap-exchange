@@ -14,7 +14,6 @@ import { ApplicationModal } from '../../state/application/actions'
 import { useModalOpen, useWalletModalToggle } from '../../state/application/hooks'
 import { ExternalLink } from '../../theme'
 import AccountDetails from '../AccountDetails'
-import MetamaskIcon from '../../assets/images/metamask.png'
 
 import Modal from '../Modal'
 import Option from './Option'
@@ -247,7 +246,7 @@ export default function WalletModal({
                 header={'Install Metamask'}
                 subheader={null}
                 link={'https://metamask.io/'}
-                icon={MetamaskIcon}
+                icon={require('../../assets/images/' + option.iconName)}
               />
             )
           } else {

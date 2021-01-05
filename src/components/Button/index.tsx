@@ -70,7 +70,7 @@ export const ButtonPrimary = styled(Base)`
 
 export const ButtonLight = styled(Base)`
   background-color: ${({ theme }) => theme.primary5};
-  color: ${({ theme }) => theme.text8};
+  color: #565A69;
   font-size: 16px;
   font-weight: 500;
 

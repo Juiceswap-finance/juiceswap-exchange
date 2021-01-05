@@ -9,10 +9,15 @@ const InfoCard = styled.button<{ active?: boolean }>`
   border: 1px solid;
   border-radius: 12px;
   width: 100% !important;
+
   &:focus {
-    box-shadow: 0 0 0 1px ${({ theme }) => theme.primary1};
+    border: 1px solid #bce8e8 !important;
   }
   border-color: ${({ theme, active }) => (active ? 'transparent' : theme.bg3)};
+
+  &:hover{
+    border: 1px solid #bce8e8 !important;
+  }
 `
 
 const OptionCard = styled(InfoCard as any)`

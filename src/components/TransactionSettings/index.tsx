@@ -33,7 +33,7 @@ const FancyButton = styled.button`
     border: 1px solid transparent;
   }
   :focus {
-    border: 1px solid ${({ theme }) => theme.primary1};
+    border: none;
   }
 `
 

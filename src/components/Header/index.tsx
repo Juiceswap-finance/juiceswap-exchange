@@ -323,9 +323,9 @@ const StyledNav = styled(Navbar)`
       flex: 0 0 100%;
       padding: 85px 15px 30px;
 
-      @media (min-width: 768px) {
+      @media (min-width: 767px) {
         width: auto;
-        top: 22px;
+        top: -8px;
         right: -194px;
         left: auto;
         background-color: transparent;
@@ -408,8 +408,9 @@ const StyledNav = styled(Navbar)`
       position: fixed;
       z-index: 11;
       display: block;
+      margin-top: -4px;
 
-      @media (max-width: 768px) {
+      @media (max-width: 767px) {
         padding: 9px;
       }
 
@@ -484,7 +485,7 @@ const StyledNav = styled(Navbar)`
   .navbar-toggler {
     display: none;
 
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
       display: block;
       background: transparent;
     }
@@ -532,6 +533,11 @@ export default function Header() {
 
   const aria = () => setAreaIsOpen(!isAre)
 
+  const blurHandler = () => {
+    setIsOpen(false)
+    setAreaIsOpen(false)
+  }
+
   return (
     <HeaderFrame>
       <ClaimModal />
@@ -545,7 +551,7 @@ export default function Header() {
           </UniIcon>
         </Title>
         <HeaderLinks>
-          <StyledNav color="light" light expand="md">
+          <StyledNav color="light" light expand="md" onBlur={blurHandler}>
             <NavbarToggler
               aria-expanded={isAre}
               onClick={() => {

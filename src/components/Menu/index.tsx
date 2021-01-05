@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { BookOpen, Code, Info, MessageCircle, PieChart } from 'react-feather'
+// import { BookOpen, Code, MessageCircle, PieChart } from 'react-feather'
 import styled from 'styled-components'
 import { ReactComponent as MenuIcon } from '../../assets/images/menu.svg'
 // import { useActiveWeb3React } from '../../hooks'
@@ -9,6 +9,12 @@ import { useModalOpen, useToggleModal } from '../../state/application/hooks'
 
 import { ExternalLink } from '../../theme'
 // import { ButtonPrimary } from '../Button'
+
+import iconAbout from '../../assets/images/icon-about.png'
+import iconDiscord from '../../assets/images/icon-discord.png'
+import iconCode from '../../assets/images/icon-code.png'
+import iconDocs from '../../assets/images/icon-docs.png'
+import iconAnalytics from '../../assets/images/icon-analytics.png'
 
 const StyledMenuIcon = styled(MenuIcon)`
   path {
@@ -75,13 +81,19 @@ const MenuItem = styled(ExternalLink)`
   flex: 1;
   padding: 0.5rem 0.5rem;
   color: ${({ theme }) => theme.text2};
+
   :hover {
     color: ${({ theme }) => theme.text1};
     cursor: pointer;
     text-decoration: none;
   }
+
   > svg {
     margin-right: 8px;
+  }
+
+  img {
+    margin-right: 5px;
   }
 `
 
@@ -106,23 +118,23 @@ export default function Menu() {
       {open && (
         <MenuFlyout>
           <MenuItem id="link" href="https://forbitswap.com/">
-            <Info size={14} />
+            <img src={iconAbout} width={16} />
             About
           </MenuItem>
           <MenuItem id="link" href="https://info.juiceswap.finance/">
-            <BookOpen size={14} />
+          <img src={iconDocs} width={12} />
             Docs
           </MenuItem>
           <MenuItem id="link" href={CODE_LINK}>
-            <Code size={14} />
+          <img src={iconCode} width={14} />
             Code
           </MenuItem>
           <MenuItem id="link" href="https://discord.com/channels/795221735771209738/795221736240185395">
-            <MessageCircle size={14} />
+            <img src={iconDiscord} width={14} />
             Discord
           </MenuItem>
           <MenuItem id="link" href="https://analytics.juiceswap.finance/">
-            <PieChart size={14} />
+          <img src={iconAnalytics} width={14} />
             Analytics
           </MenuItem>
           {/* {account && (

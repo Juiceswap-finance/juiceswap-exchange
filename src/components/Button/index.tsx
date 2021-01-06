@@ -137,6 +137,7 @@ export const ButtonSecondary = styled(Base)`
 
   &:hover {
     border: 1px solid ${({ theme }) => theme.primary3};
+    background: linear-gradient(to right,rgb(77 160 250),rgb(87 193 252),rgb(104 208 250));
   }
   
   &:active {

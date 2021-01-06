@@ -84,7 +84,7 @@ export function AddRemoveTabs({ adding, creating }: { adding: boolean; creating:
   return (
     <Tabs>
       <RowBetween style={{ padding: '1rem' }}>
-        <HistoryLink to="/pool">
+        <HistoryLink to="/swap">
           <StyledArrowLeft />
         </HistoryLink>
         <ActiveText>{creating ? 'Create a pair' : adding ? 'Add Liquidity' : 'Remove Liquidity'}</ActiveText>

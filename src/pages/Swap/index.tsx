@@ -41,9 +41,10 @@ import { useExpertModeManager, useUserSlippageTolerance } from '../../state/user
 import { LinkStyledButton, TYPE } from '../../theme'
 import { maxAmountSpend } from '../../utils/maxAmountSpend'
 import { computeTradePriceBreakdown, warningSeverity } from '../../utils/prices'
-import AppBody from '../AppBody'
+// import AppBody from '../AppBody'
 import { ClickableText } from '../Pool/styleds'
 import Loader from '../../components/Loader'
+
 
 export default function Swap() {
   const loadedUrlParams = useDefaultsFromURLSearch()
@@ -270,9 +271,10 @@ export default function Swap() {
         tokens={urlLoadedTokens}
         onConfirm={handleConfirmTokenWarning}
       />
-      <AppBody>
-        <SwapPoolTabs active={'swap'} />
+      
         <Wrapper id="swap-page">
+          <div><SwapPoolTabs active={'swap'} /></div>
+
           <ConfirmSwapModal
             isOpen={showConfirm}
             trade={trade}
@@ -299,6 +301,7 @@ export default function Swap() {
               otherCurrency={currencies[Field.OUTPUT]}
               id="swap-currency-input"
             />
+
             <AutoColumn justify="space-between">
               <AutoRow justify={isExpertMode ? 'space-between' : 'center'} style={{ padding: '0 1rem' }}>
                 <ArrowWrapper clickable>
@@ -318,6 +321,7 @@ export default function Swap() {
                 ) : null}
               </AutoRow>
             </AutoColumn>
+
             <CurrencyInputPanel
               value={formattedAmounts[Field.OUTPUT]}
               onUserInput={handleTypeOutput}
@@ -372,6 +376,7 @@ export default function Swap() {
               </Card>
             )}
           </AutoColumn>
+
           <BottomGrouping>
             {!account ? (
               <ButtonLight onClick={toggleWalletModal}>Connect Wallet</ButtonLight>
@@ -472,7 +477,6 @@ export default function Swap() {
             ) : null}
           </BottomGrouping>
         </Wrapper>
-      </AppBody>
       <AdvancedSwapDetailsDropdown trade={trade} />
     </>
   )

@@ -1,5 +1,5 @@
 import { ChainId, TokenAmount } from '@forbitswap/sdk'
-import React, { useState } from 'react'
+import React, { useEffect,useState } from 'react'
 import { Text } from 'rebass'
 import { NavLink } from 'react-router-dom'
 import { darken } from 'polished'
@@ -48,6 +48,9 @@ const HeaderFrame = styled.div`
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 1rem;
   z-index: 2;
+  width: 100%;
+  transition: all 0.5s ease-in-out 0s;
+
   ${({ theme }) => theme.mediaWidth.upToMedium`
     grid-template-columns: 1fr;
     padding: 0 1rem;
@@ -282,30 +285,33 @@ const StyledNav = styled(Navbar)`
       transform: translateX(-50%);
     }
 
-    .navbar-collapse {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 100%;
-      z-index: 10;
-      background-color: rgba(4, 4, 4, 0.5);
-      opacity: 0;
-      transition: opacity 0.2s;
+    .show {
+      &.navbar-collapse {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        z-index: 10;
+        background-color: rgba(4, 4, 4, 0.5);
+        opacity: 0;
+        transition: opacity 0.2s;
 
-      @media (min-width: 768px) {
-        background-color: transparent;
-        opacity: 1;
-      }
+        @media (min-width: 768px) {
+          background-color: transparent;
+          opacity: 1;
+        }
 
-      &.show {
-        opacity: 1;
+        &.show {
+          opacity: 1;
 
-        .navbar-nav {
-          width: 280px;
-          display: flex;
-          flex-direction: column;
+          .navbar-nav {
+            width: 280px;
+            display: flex;
+            flex-direction: column;
+            visibility: visible;
+          }
         }
       }
     }
@@ -313,6 +319,7 @@ const StyledNav = styled(Navbar)`
     .navbar-nav {
       flex: 0 0 280px;
       width: 0;
+      visibility: hidden;
       transition: width 0.5s;
       position: absolute;
       top: -30px;
@@ -322,6 +329,7 @@ const StyledNav = styled(Navbar)`
       background: #fff;
       flex: 0 0 100%;
       padding: 85px 15px 30px;
+      visib
 
       @media (min-width: 767px) {
         width: auto;
@@ -503,6 +511,7 @@ const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
   [ChainId.KOVAN]: 'Kovan'
 }
 
+
 export default function Header() {
   const { account, chainId } = useActiveWeb3React()
   const { t } = useTranslation()
@@ -538,8 +547,19 @@ export default function Header() {
     setAreaIsOpen(false)
   }
 
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if  ( (window.scrollY > 72)){
+        document.body.classList.add("fix");
+      }
+      else{
+        document.body.classList.remove("fix");
+      }
+    });
+  }, []);
+
   return (
-    <HeaderFrame>
+    <HeaderFrame className="menu-fix">
       <ClaimModal />
       <Modal isOpen={showUniBalanceModal} onDismiss={() => setShowUniBalanceModal(false)}>
         <UniBalanceContent setShowUniBalanceModal={setShowUniBalanceModal} />
@@ -564,7 +584,7 @@ export default function Header() {
                 <StyledNavLink id={`swap-nav-link`} to={'/swap'}>
                     {t('swap')}
                 </StyledNavLink>
-                <StyledNavLink
+                {/* <StyledNavLink
                   id={`pool-nav-link`}
                   to={'/pool'}
                   isActive={(match, { pathname }) =>
@@ -576,7 +596,7 @@ export default function Header() {
                   }
                 >
                   {t('pool')}
-                </StyledNavLink>
+                </StyledNavLink> */}
                   <a className={`${darkMode?'sc-qrIAp ebAwSE':'sc-qrIAp bZPGFH'}`} id={`swap-nav-link`} target="_blank"  href={"//www.juiceswap.finance/farms"}>
                     Yield Farm
                   </a>

@@ -18,17 +18,18 @@ import { useActiveWeb3React } from '../../hooks'
 import { usePairs } from '../../data/Reserves'
 import { toV2LiquidityToken, useTrackedTokenPairs } from '../../state/user/hooks'
 import { Dots } from '../../components/swap/styleds'
-import { CardSection, DataCard, CardNoise, CardBGImage } from '../../components/earn/styled'
+// import { CardSection, DataCard, CardNoise, CardBGImage } from '../../components/earn/styled'
+// import { DataCard } from '../../components/earn/styled'
 
 const PageWrapper = styled(AutoColumn)`
   max-width: 640px;
   width: 100%;
 `
 
-const VoteCard = styled(DataCard)`
-  background: linear-gradient(90deg, rgb(93 247 242) 0%, rgb(195 229 249) 100%);
-  overflow: hidden;
-`
+// const VoteCard = styled(DataCard)`
+//   background: linear-gradient(90deg, rgb(93 247 242) 0%, rgb(195 229 249) 100%);
+//   overflow: hidden;
+// `
 
 const TitleRow = styled(RowBetween)`
   ${({ theme }) => theme.mediaWidth.upToSmall`
@@ -40,12 +41,20 @@ const TitleRow = styled(RowBetween)`
 `
 
 const ButtonRow = styled(RowFixed)`
-  gap: 8px;
-  ${({ theme }) => theme.mediaWidth.upToSmall`
-    width: 100%;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-  `};
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  a {
+    width: 100% !important;
+    padding: 19px 8px;
+    margin-bottom: 10px;
+
+    :active, :focus {
+      box-shadow: unset;
+    }
+  }
+
 `
 
 const ResponsiveButtonPrimary = styled(ButtonPrimary)`
@@ -112,7 +121,7 @@ export default function Pool() {
     <>
       <PageWrapper>
         <SwapPoolTabs active={'pool'} />
-        <BoxColumn>
+        {/* <BoxColumn>
           <VoteCard>
             <CardBGImage />
             <CardNoise />
@@ -138,28 +147,29 @@ export default function Pool() {
             <CardBGImage />
             <CardNoise />
           </VoteCard>
-        </BoxColumn>
+        </BoxColumn> */}
 
         <AutoColumn gap="lg" justify="center">
           <BoxColumn>
           <AutoColumn gap="lg" style={{ width: '100%' }}>
-            <TitleRow style={{ marginTop: '1rem' }} padding={'0'}>
-            <HideSmall>
-              <TYPE.mediumHeader style={{ justifySelf: 'flex-start' }}>
-                Your liquidity
-              </TYPE.mediumHeader>
-            </HideSmall>
+            <ButtonRow>
+              <ResponsiveButtonPrimary id="join-pool-button" as={Link} padding="6px 8px" to="/add/ETH">
+                <Text fontWeight={500} fontSize={16}>
+                  Add Liquidity
+                </Text>
+              </ResponsiveButtonPrimary>
 
-              <ButtonRow>
-                <ResponsiveButtonSecondary as={Link} padding="6px 8px" to="/create/ETH">
-                  Create a pair
-                </ResponsiveButtonSecondary>
-                <ResponsiveButtonPrimary id="join-pool-button" as={Link} padding="6px 8px" to="/add/ETH">
-                  <Text fontWeight={500} fontSize={16}>
-                    Add Liquidity
-                  </Text>
-                </ResponsiveButtonPrimary>
-              </ButtonRow>
+              <ResponsiveButtonSecondary as={Link} padding="6px 8px" to="/create/ETH">
+                Create a pair
+              </ResponsiveButtonSecondary>
+            </ButtonRow>
+
+            <TitleRow style={{ }} padding={'0'}>
+              <HideSmall>
+                <TYPE.mediumHeader style={{ justifySelf: 'flex-start' }}>
+                  Your liquidity
+                </TYPE.mediumHeader>
+              </HideSmall>
             </TitleRow>
 
             {!account ? (
@@ -215,10 +225,5 @@ export default function Pool() {
 
 
 const BoxColumn = styled.div`
-  width: 100%;
-  margin: 30px auto auto;
-
-  @media (min-width: 768px) {
-    width: 420px;
-  }
+  width: 100% !important;
 `

@@ -51,13 +51,14 @@ export function colors(darkMode: boolean): Colors {
     text8: darkMode ? '#ffffff' : '#000000',
 
     // backgrounds / greys
-    bg1: darkMode ? '#262729' : '#FFFFFF',
+    bg1: darkMode ? '#14223E' : '#FFFFFF',
     bg2: darkMode ? '#2C2F36' : '#F7F8FA',
     bg3: darkMode ? '#2d3038' : '#EDEEF2',
     bg4: darkMode ? '#565A69' : '#CED0D9',
     bg5: darkMode ? '#6C7284' : '#888D9B',
     bg6: darkMode ? 'linear-gradient(90deg,rgb(93 247 242) 0%,rgb(195 229 249) 100%)' : 'linear-gradient(90deg,rgb(93 247 242) 0%,rgb(195 229 249) 100%)',
     bg7: darkMode ? '#374459' : '#FFFFFF',
+    bg8: darkMode ? '#0B162C' : '#FFFFFF',
     
     //specialty colors
     modalBG: darkMode ? 'rgba(0,0,0,.425)' : 'rgba(0,0,0,0.3)',

@@ -80,6 +80,7 @@ const HeaderControls = styled.div`
     bottom: 0px;
     left: 0px;
     width: 100%;
+    z-index: 99;
     height: 72px;
     border-radius: 12px 12px 0 0;
     background-color: ${({ theme }) => theme.bg1};

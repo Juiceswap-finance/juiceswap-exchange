@@ -45,7 +45,10 @@ const HeaderWrapper = styled.div`
   justify-content: space-between;
   transition: all 0.5s ease-in-out 0s;
   position: fixed;
-  z-index: 99; 
+  
+  @media (max-width: 768px) {
+    z-index: 99;
+  }
 `
 
 const BodyWrapper = styled.div`

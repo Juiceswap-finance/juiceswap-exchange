@@ -7,6 +7,7 @@ import styled from 'styled-components'
 
 
 
+
 const HeaderFrame = styled.div`
   display: grid;
   grid-column-start: 2;
@@ -38,6 +39,10 @@ const NavTab = styled.div`
     width: 50%;
     text-align: center;
 
+    &.active {
+      color
+    }
+
     &:hover, &:active, focus {
       color: #565A69;
     }
@@ -61,6 +66,7 @@ const Tab = styled.div`
 `
 
 
+
 export default function Header() {
 
   const [isTab, setTab] = useState('swap')
@@ -71,10 +77,10 @@ export default function Header() {
     <HeaderFrame>
       <Tab>
         <NavTab>
-          <a onClick={()=>ChangeTab('swap')}>
+          <a className="active" onClick={()=>ChangeTab('swap')}>
               Swap
           </a>
-          <a onClick={()=>ChangeTab('pool')}> Pool </a>
+          <a className="active" onClick={()=>ChangeTab('pool')}> Pool </a>
         </NavTab>
         {isTab==='swap'? <Swap/> : <Pool/>}
       </Tab>

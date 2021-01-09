@@ -125,7 +125,7 @@ export const ButtonGray = styled(Base)`
 export const ButtonSecondary = styled(Base)`
   border: 1px solid ${({ theme }) => theme.primary4};
   color: #ffffff;
-  background: linear-gradient(90deg,rgb(93 247 242) 0%,rgb(195 229 249) 100%);
+  background: ${({ theme }) => theme.bg6};
   font-size: 16px;
   border-radius: 12px;
   padding: ${({ padding }) => (padding ? padding : '10px')};

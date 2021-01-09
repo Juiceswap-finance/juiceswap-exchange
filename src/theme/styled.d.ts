@@ -52,6 +52,7 @@ export interface Colors {
   yellow2: Color
   blue1: Color
   gradient: Color
+  gradient1: Color
 }
 
 export interface Grids {

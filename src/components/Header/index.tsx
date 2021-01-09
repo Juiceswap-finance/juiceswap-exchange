@@ -1,5 +1,5 @@
 import { ChainId, TokenAmount } from '@forbitswap/sdk'
-import React, { useEffect,useState } from 'react'
+import React, { useEffect,useRef,useState } from 'react'
 import { Text } from 'rebass'
 import { NavLink } from 'react-router-dom'
 import { darken } from 'polished'
@@ -141,7 +141,7 @@ const UNIAmount = styled(AccountElement)`
   padding: 4px 8px;
   height: 36px;
   font-weight: 500;
-  background: linear-gradient(90deg, rgb(93 247 242) 0%, rgb(195 229 249) 100%);
+  background: ${({ theme }) => theme.bg6};;
 `
 
 const UNIWrapper = styled.span`
@@ -542,11 +542,6 @@ export default function Header() {
 
   const aria = () => setAreaIsOpen(!isAre)
 
-  const blurHandler = () => {
-    setIsOpen(false)
-    setAreaIsOpen(false)
-  }
-
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if  ( (window.scrollY > 72)){
@@ -558,6 +553,27 @@ export default function Header() {
     });
   }, []);
 
+  const blur = useRef(null);
+
+  const useOnClickOutside = (ref:any) => {
+    useEffect(() =>{
+      const handleOutside = (event:any) => {
+        if (ref.current && !ref.current.contains(event.target)) {
+          // setIsOpen(false)
+          setAreaIsOpen(false)
+          console.log('dddddddd')
+        }
+      }
+
+      document.addEventListener("mousedown", handleOutside, false);
+      return () => {
+        document.removeEventListener("mousedown", handleOutside, false);
+      };
+    },[])
+  }
+
+  useOnClickOutside(blur);
+
   return (
     <HeaderFrame className="menu-fix">
       <ClaimModal />
@@ -565,15 +581,16 @@ export default function Header() {
         <UniBalanceContent setShowUniBalanceModal={setShowUniBalanceModal} />
       </Modal>
       <HeaderRow>
-        <Title href=".">
+        <Title href="/">
           <UniIcon>
             <img width={'150px'} src={isDark ? LogoDark : Logo} alt="logo" />
           </UniIcon>
         </Title>
         <HeaderLinks>
-          <StyledNav color="light" light expand="md" onBlur={blurHandler}>
+          <StyledNav color="light" light expand="md">
             <NavbarToggler
               aria-expanded={isAre}
+              ref={blur}
               onClick={() => {
                 toggle()
                 aria()
@@ -584,19 +601,6 @@ export default function Header() {
                 <StyledNavLink id={`swap-nav-link`} to={'/swap'}>
                     {t('swap')}
                 </StyledNavLink>
-                {/* <StyledNavLink
-                  id={`pool-nav-link`}
-                  to={'/pool'}
-                  isActive={(match, { pathname }) =>
-                    Boolean(match) ||
-                    pathname.startsWith('/add') ||
-                    pathname.startsWith('/remove') ||
-                    pathname.startsWith('/create') ||
-                    pathname.startsWith('/find')
-                  }
-                >
-                  {t('pool')}
-                </StyledNavLink> */}
                   <a className={`${darkMode?'sc-qrIAp ebAwSE':'sc-qrIAp bZPGFH'}`} id={`swap-nav-link`} target="_blank"  href={"//www.juiceswap.finance/farms"}>
                     Yield Farm
                   </a>

@@ -117,7 +117,7 @@ export default function Menu() {
 
       {open && (
         <MenuFlyout>
-          <MenuItem id="link" href="https://forbitswap.com/">
+          <MenuItem id="link" href="#">
             <img src={iconAbout} width={16} />
             About
           </MenuItem>

@@ -136,7 +136,7 @@ export function CurrencySearch({
   const selectedListInfo = useSelectedListInfo()
 
   return (
-    <Column style={{ width: '100%', flex: '1 1' }}>
+    <Column style={{ width: '100%', flex: '1 1', boxShadow: 'rgb(0 0 0 / 12%) -6px 4px 10px 0px, rgba(0,0,0,0.23) -1px 7px 18px 0px' }}>
       <PaddedColumn gap="14px">
         <RowBetween>
           <Text fontWeight={500} fontSize={16}>

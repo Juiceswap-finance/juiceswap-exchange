@@ -230,7 +230,7 @@ body {
   min-height: 100vh;
   background-repeat: no-repeat;
   background-image: ${({ theme }) =>
-  `radial-gradient(50% 50% at 50% 30%, ${theme.primary1!=='#2172E5'?'rgb(191,233,239,1)':'rgb(4 47 84)'} 0%, ${theme.primary1!=='#2172E5'?'rgb(255,255,255,1)':'rgba(0, 14, 25)'} 100%)`};
+  `radial-gradient(50% 50% at 50% 30%, ${theme.primary1!=='#2172E5'?'#8bedfd':'rgb(4 47 84)'} 0%, ${theme.primary1!=='#2172E5'?'rgb(255,255,255,1)':'rgba(0, 14, 25)'} 100%)`};
 
   &.fix {
     .menu-fix {

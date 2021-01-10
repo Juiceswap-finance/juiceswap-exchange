@@ -1,5 +1,5 @@
 import { Placement } from '@popperjs/core'
-import { transparentize } from 'polished'
+// import { transparentize } from 'polished'
 import React, { useCallback, useState } from 'react'
 import { usePopper } from 'react-popper'
 import styled from 'styled-components'
@@ -15,7 +15,7 @@ const PopoverContainer = styled.div<{ show: boolean }>`
 
   background: ${({ theme }) => theme.bg2};
   border: 1px solid ${({ theme }) => theme.bg3};
-  box-shadow: 0 4px 8px 0 ${({ theme }) => transparentize(0.9, theme.shadow1)};
+  box-shadow: rgb(0 0 0 / 12%) -6px 4px 10px 0px, rgba(0,0,0,0.23) -1px 7px 18px 0px;
   color: ${({ theme }) => theme.text2};
   border-radius: 8px;
 `

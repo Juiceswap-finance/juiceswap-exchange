@@ -61,7 +61,7 @@ export const ButtonPrimary = styled(Base)`
     background: ${({ theme, altDisabledStyle }) => (altDisabledStyle ? theme.primary1 : theme.bg3)};
     color: ${({ theme, altDisabledStyle }) => (altDisabledStyle ? 'white' : theme.text3)};
     cursor: auto;
-    box-shadow: none;
+    box-shadow: rgba(0, 0, 0, 0.19) -3px 2px 3px 0px, rgba(0, 0, 0, 0.23) 0px 4px 12px 1px;
     border: 1px solid transparent;
     outline: none;
     opacity: ${({ altDisabledStyle }) => (altDisabledStyle ? '0.7' : '1')};
@@ -94,7 +94,7 @@ export const ButtonLight = styled(Base)`
     :hover {
       cursor: auto;
       background-color: ${({ theme }) => theme.primary5};
-      box-shadow: none;
+      box-shadow: rgba(0, 0, 0, 0.19) -3px 2px 3px 0px, rgba(0, 0, 0, 0.23) 0px 4px 12px 1px;
       border: 1px solid transparent;
       outline: none;
     }
@@ -129,6 +129,7 @@ export const ButtonSecondary = styled(Base)`
   font-size: 16px;
   border-radius: 12px;
   padding: ${({ padding }) => (padding ? padding : '10px')};
+  transition: .5s;
 
   &:focus {
     box-shadow: 0 0 0 1pt ${({ theme }) => theme.primary4};
@@ -137,7 +138,7 @@ export const ButtonSecondary = styled(Base)`
 
   &:hover {
     border: 1px solid ${({ theme }) => theme.primary3};
-    background: linear-gradient(to right,rgb(77 160 250),rgb(87 193 252),rgb(104 208 250));
+    background: linear-gradient(90deg,rgb(47 217 212) 0%,rgb(25 123 179) 100%) rgb(57 190 235);
   }
   
   &:active {
@@ -272,7 +273,7 @@ const ButtonErrorStyle = styled(Base)`
   &:disabled {
     opacity: 50%;
     cursor: auto;
-    box-shadow: none;
+    box-shadow: rgba(0, 0, 0, 0.19) -3px 2px 3px 0px, rgba(0, 0, 0, 0.23) 0px 4px 12px 1px;
     background-color: ${({ theme }) => theme.red1};
     border: 1px solid ${({ theme }) => theme.red1};
   }

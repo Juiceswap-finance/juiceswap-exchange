@@ -1,5 +1,5 @@
 import { ChainId, TokenAmount } from '@forbitswap/sdk'
-import React, { useEffect,useRef,useState } from 'react'
+import React, { useEffect,useState } from 'react'
 import { Text } from 'rebass'
 import { NavLink } from 'react-router-dom'
 import { darken } from 'polished'
@@ -312,6 +312,14 @@ const StyledNav = styled(Navbar)`
             flex-direction: column;
             visibility: visible;
           }
+
+          .btn-hides{
+            width: calc(100% - 238px);
+            background: red;
+            float: right;
+            height: 100%;
+            background: transparent;
+          }
         }
       }
     }
@@ -538,9 +546,9 @@ export default function Header() {
 
   const toggle = () => setIsOpen(!isOpen)
 
-  const [isAre, setAreaIsOpen] = useState(false)
+  const [isActive] = useState("false");
 
-  const aria = () => setAreaIsOpen(!isAre)
+  const handleToggle = () => setIsOpen(!isActive)
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -552,27 +560,6 @@ export default function Header() {
       }
     });
   }, []);
-
-  const blur = useRef(null);
-
-  const useOnClickOutside = (ref:any) => {
-    useEffect(() =>{
-      const handleOutside = (event:any) => {
-        if (ref.current && !ref.current.contains(event.target)) {
-          // setIsOpen(false)
-          setAreaIsOpen(false)
-          console.log('dddddddd')
-        }
-      }
-
-      document.addEventListener("mousedown", handleOutside, false);
-      return () => {
-        document.removeEventListener("mousedown", handleOutside, false);
-      };
-    },[])
-  }
-
-  useOnClickOutside(blur);
 
   return (
     <HeaderFrame className="menu-fix">
@@ -589,11 +576,9 @@ export default function Header() {
         <HeaderLinks>
           <StyledNav color="light" light expand="md">
             <NavbarToggler
-              aria-expanded={isAre}
-              ref={blur}
+              aria-expanded={isOpen}
               onClick={() => {
                 toggle()
-                aria()
               }}
             />
             <Collapse isOpen={isOpen} navbar>
@@ -611,6 +596,7 @@ export default function Header() {
                   Staking
                 </StyledExternalLink>
               </Nav>
+              <div className="btn-hides" onClick={handleToggle}></div>
             </Collapse>
           </StyledNav>
         </HeaderLinks>

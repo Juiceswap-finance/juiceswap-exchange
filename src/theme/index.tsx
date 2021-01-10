@@ -56,7 +56,7 @@ export function colors(darkMode: boolean): Colors {
     bg3: darkMode ? '#2d3038' : '#EDEEF2',
     bg4: darkMode ? '#565A69' : '#CED0D9',
     bg5: darkMode ? '#6C7284' : '#888D9B',
-    bg6: darkMode ? 'linear-gradient(90deg, rgb(15 236 229) 0%, rgb(9 143 221) 100%) rgb(222 206 232 / 87%)' : 'linear-gradient(90deg,rgb(93 247 242) 0%,rgb(195 229 249) 100%)',
+    bg6: darkMode ? 'linear-gradient(90deg, rgb(15 236 229) 0%, rgb(9 143 221) 100%) rgb(222 206 232 / 87%)' : 'linear-gradient(90deg, rgb(15 236 229) 0%, rgb(9 143 221) 100%) rgb(222 206 232 / 87%)',
     bg7: darkMode ? '#374459' : '#FFFFFF',
     bg8: darkMode ? '#0B162C' : '#FFFFFF',
     
@@ -87,7 +87,7 @@ export function colors(darkMode: boolean): Colors {
     yellow1: '#FFE270',
     yellow2: '#000',
     blue1: '#2172E5',
-    gradient: darkMode ? 'linear-gradient(90deg, rgb(15 236 229) 0%, rgb(9 143 221) 100%) rgb(222 206 232 / 87%)' : 'linear-gradient(90deg,rgb(93 247 242) 0%,rgb(195 229 249) 100%)',
+    gradient: darkMode ? 'linear-gradient(90deg, rgb(15 236 229) 0%, rgb(9 143 221) 100%) rgb(222 206 232 / 87%)' : 'linear-gradient(90deg, rgb(15 236 229) 0%, rgb(9 143 221) 100%) rgb(222 206 232 / 87%)',
     gradient1: darkMode ? 'linear-gradient(90deg,rgb(93 247 242) 0%,rgb(195 229 249) 100%)' : 'linear-gradient(90deg,rgb(93 247 242) 0%,rgb(195 229 249) 100%)',
 
     // dont wanna forget these blue yet

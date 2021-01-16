@@ -549,7 +549,7 @@ export default function Header() {
   const [isActive] = useState("false");
 
   const handleToggle = () => setIsOpen(!isActive)
-
+  //test
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if  ( (window.scrollY > 72)){
@@ -593,7 +593,7 @@ export default function Header() {
                   Reclamation
                 </StyledExternalLink>
                 <StyledExternalLink id={`stake-nav-link`} href={'//www.juiceswap.finance/Staking'}>
-                  Staking
+                  Staking 
                 </StyledExternalLink>
               </Nav>
               <div className="btn-hides" onClick={handleToggle}></div>

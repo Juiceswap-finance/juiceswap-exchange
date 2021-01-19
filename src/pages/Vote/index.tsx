@@ -131,20 +131,20 @@ export default function Vote() {
           <CardSection>
             <AutoColumn gap="md">
               <RowBetween>
-                <TYPE.white fontWeight={600}>Forbitswap Governance</TYPE.white>
+                <TYPE.white fontWeight={600}>JuiceSwap Governance</TYPE.white>
               </RowBetween>
               <RowBetween>
                 <TYPE.white fontSize={14}>
-                  FBT tokens represent voting shares in Forbitswap governance. You can vote on each proposal yourself or
+                  FBT tokens represent voting shares in JuiceSwap governance. You can vote on each proposal yourself or
                   delegate your votes to a third party.
                 </TYPE.white>
               </RowBetween>
               <ExternalLink
                 style={{ color: 'white', textDecoration: 'underline' }}
-                href="https://uniswap.org/blog/uni"
+                href="https://juiceswap.finance/jus-tokens"
                 target="_blank"
               >
-                <TYPE.white fontSize={14}>Read more about Forbitswap governance</TYPE.white>
+                <TYPE.white fontSize={14}>Read more about JuiceSwap governance</TYPE.white>
               </ExternalLink>
             </AutoColumn>
           </CardSection>

@@ -117,7 +117,7 @@ export default function UniBalanceContent({ setShowUniBalanceModal }: { setShowU
               <TYPE.white color="#565A69">{totalSupply?.toFixed(0, { groupSeparator: ',' })}</TYPE.white>
             </RowBetween>
             {uni && uni.chainId === ChainId.MAINNET ? (
-              <ExternalLink href={`https://forbitswap.info/token/${uni.address}`}>View JUS Analytics</ExternalLink>
+              <ExternalLink href={`https://analytics.juiceswap.finance/tokens/${uni.address}`}>View JUS Analytics</ExternalLink>
             ) : null}
           </AutoColumn>
         </CardSection>

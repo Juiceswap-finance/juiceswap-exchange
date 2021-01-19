@@ -188,7 +188,7 @@ export default function Pool() {
               <>
                 <ButtonSecondary>
                   <RowBetween>
-                    <ExternalLink href={'https://forbitswap.info/account/' + account}>
+                    <ExternalLink href={'https://analytics.juiceswap.finance/accounts/' + account}>
                       Account analytics and accrued fees
                     </ExternalLink>
                     <span> ↗</span>

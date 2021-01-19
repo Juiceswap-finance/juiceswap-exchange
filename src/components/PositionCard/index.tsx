@@ -280,7 +280,7 @@ export default function FullPositionCard({ pair, border }: PositionCardProps) {
             <ButtonSecondary padding="8px" borderRadius="8px">
               <ExternalLink
                 style={{ width: '100%', textAlign: 'center' }}
-                href={`https://forbitswap.info/account/${account}`}
+                href={`https://analytics.juiceswap.finance/accounts/${account}`}
               >
                 View accrued fees and analytics<span style={{ fontSize: '11px' }}>↗</span>
               </ExternalLink>

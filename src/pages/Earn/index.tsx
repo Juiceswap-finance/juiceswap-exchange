@@ -49,16 +49,16 @@ export default function Earn() {
           <CardSection>
             <AutoColumn gap="md">
               <RowBetween>
-                <TYPE.white fontWeight={600}>Forbitswap liquidity mining</TYPE.white>
+                <TYPE.white fontWeight={600}>JuiceSwap liquidity mining</TYPE.white>
               </RowBetween>
               <RowBetween>
                 <TYPE.white fontSize={14}>
-                  Deposit your Liquidity Provider tokens to receive FBT, the Forbitswap protocol governance token.
+                  Deposit your Liquidity Provider tokens to receive FBT, the JuiceSwap protocol governance token.
                 </TYPE.white>
               </RowBetween>{' '}
               <ExternalLink
                 style={{ color: 'white', textDecoration: 'underline' }}
-                href="https://uniswap.org/blog/uni/"
+                href="https://juiceswap.finance/jus-tokens"
                 target="_blank"
               >
                 <TYPE.white fontSize={14}>Read more about FBT</TYPE.white>

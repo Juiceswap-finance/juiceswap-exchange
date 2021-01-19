@@ -95,7 +95,7 @@ export function tryParseAmount(value?: string, currency?: Currency): CurrencyAmo
 
 
 
-//// forbit
+//// Juice
 const BAD_RECIPIENT_ADDRESSES: string[] = [
   '0x09EaB3431281f4686cF65A0005F765F6e17cE2fD', // v2 factory
   '0x0c80bEFE9a4B27e3b21B4a008cE0b587D1eFEd99', // v2 router 01

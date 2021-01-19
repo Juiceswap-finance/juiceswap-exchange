@@ -3,10 +3,9 @@ import { AbstractConnector } from '@web3-react/abstract-connector'
 
 import { fortmatic, injected, portis, walletconnect, walletlink } from '../connectors'
 
-// UNISWAP
 // export const ROUTER_ADDRESS = '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D'
 
-// FORBIT SWAP
+// Juice
 export const ROUTER_ADDRESS = '0x015e0d3c7515fd443e03d2e86fd8e027efad3f9d' //UniswapV2Router02
 
 export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000'

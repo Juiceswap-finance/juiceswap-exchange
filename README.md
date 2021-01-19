@@ -21,11 +21,6 @@ To access the juiceswap Interface, use an IPFS gateway link from the
 [latest release](https://github.com/juiceswap/juiceswap-interface/releases/latest), 
 or visit [app.juiceswap.com](https://app.juiceswap.finance).
 
-## Listing a token
-
-Please see the
-[@juiceswap/default-token-list](https://github.com/juiceswap.finance/default-token-list) 
-repository.
 
 ## Development
 
@@ -48,13 +43,3 @@ To have the interface default to a different network when a wallet is not connec
 1. Make a copy of `.env` named `.env.local`
 2. Change `REACT_APP_NETWORK_ID` to `"{YOUR_NETWORK_ID}"`
 3. Change `REACT_APP_NETWORK_URL` to e.g. `"https://{YOUR_NETWORK_ID}.infura.io/v3/{YOUR_INFURA_KEY}"` 
-
-Note that the interface only works on testnets where both 
-[Jusiceswap](https://juiceswap.finance/docs/smart-contracts/factory/) and 
-[multicall](https://github.com/Juiceswap-finance) are deployed.
-The interface will not work on other networks.
-
-## Contributions
-
-**Please open all pull requests against the `master` branch.** 
-CI checks will run against all PRs.

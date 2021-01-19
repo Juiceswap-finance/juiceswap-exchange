@@ -15,13 +15,6 @@ An open source interface for Juiceswap -- a protocol for decentralized exchange 
 - Discord: [juiceswap](https://discord.gg/Y7TF6QA)
 - Whitepaper: [Link](https://hackmd.io/C-DvwDSfSxuh-Gd4WKE_ig)
 
-## Accessing the juiceswap Interface
-
-To access the juiceswap Interface, use an IPFS gateway link from the
-[latest release](https://github.com/juiceswap/juiceswap-interface/releases/latest), 
-or visit [app.juiceswap.com](https://app.juiceswap.finance).
-
-
 ## Development
 
 ### Install Dependencies

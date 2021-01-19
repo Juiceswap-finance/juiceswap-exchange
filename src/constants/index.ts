@@ -7,7 +7,7 @@ import { fortmatic, injected, portis, walletconnect, walletlink } from '../conne
 // export const ROUTER_ADDRESS = '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D'
 
 // FORBIT SWAP
-export const ROUTER_ADDRESS = '0x75570Ea78378a117513CD96470f9E018e89d26dA' //UniswapV2Router02
+export const ROUTER_ADDRESS = '0x28bF04707094D8e13dcCB3e1FA3a7DB1DB248693' //UniswapV2Router02
 
 export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000'
 
@@ -31,7 +31,7 @@ export const PROPOSAL_LENGTH_IN_DAYS = 7
 
 export const GOVERNANCE_ADDRESS = '0x5e4be8Bc9637f0EAA1A755019e06A68ce081D58F'
 
-const FBT_ADDRESS = '0x6a73eaa5ff4a525717bb809448881fc4155bfcfb'
+const FBT_ADDRESS = '0x527e8d909d86ddb475c2a15002d8f4a2eda88459'
 export const UNI: { [chainId in ChainId]: Token } = {
   [ChainId.MAINNET]: new Token(ChainId.MAINNET, FBT_ADDRESS, 18, 'FBT', 'Uniswap'),
   [ChainId.RINKEBY]: new Token(ChainId.RINKEBY, FBT_ADDRESS, 18, 'FBT', 'Uniswap'),

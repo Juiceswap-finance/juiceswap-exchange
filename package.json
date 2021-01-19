@@ -9,6 +9,7 @@
     "@forbitswap/sdk": "^3.1.2",
     "@forbitswap/token-lists": "^1.0.2",
     "@forbitswap/v2-core": "^1.0.3",
+    "@juiceswap/sdk": "0.0.1",
     "@popperjs/core": "^2.4.4",
     "@reach/dialog": "^0.10.3",
     "@reach/portal": "^0.10.3",

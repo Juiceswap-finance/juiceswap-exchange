@@ -1,4 +1,4 @@
-import { getVersionUpgrade, minVersionBump, VersionUpgrade } from '@forbitswap/token-lists'
+import { getVersionUpgrade, minVersionBump, VersionUpgrade } from '@juiceswap/token-lists'
 import { useCallback, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useActiveWeb3React } from '../../hooks'

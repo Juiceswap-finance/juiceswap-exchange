@@ -1,4 +1,4 @@
-import { ChainId } from '@forbitswap/sdk'
+import { ChainId } from '@juiceswap/sdk'
 import { createStore, Store } from 'redux'
 import { addPopup, ApplicationModal, removePopup, setOpenModal, updateBlockNumber } from './actions'
 import reducer, { ApplicationState } from './reducer'

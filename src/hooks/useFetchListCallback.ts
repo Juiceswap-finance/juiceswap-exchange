@@ -1,6 +1,6 @@
 import { nanoid } from '@reduxjs/toolkit'
-import { ChainId } from '@forbitswap/sdk'
-import { TokenList } from '@forbitswap/token-lists'
+import { ChainId } from '@juiceswap/sdk'
+import { TokenList } from '@juiceswap/token-lists'
 import { useCallback } from 'react'
 import { useDispatch } from 'react-redux'
 import { getNetworkLibrary, NETWORK_CHAIN_ID } from '../connectors'

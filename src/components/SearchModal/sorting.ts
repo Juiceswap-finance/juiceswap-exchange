@@ -1,4 +1,4 @@
-import { Token, TokenAmount } from '@forbitswap/sdk'
+import { Token, TokenAmount } from '@juiceswap/sdk'
 import { useMemo } from 'react'
 import { useAllTokenBalances } from '../../state/wallet/hooks'
 

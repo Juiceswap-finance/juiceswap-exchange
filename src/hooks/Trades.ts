@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Pair, Token, Trade } from '@forbitswap/sdk'
+import { Currency, CurrencyAmount, Pair, Token, Trade } from '@juiceswap/sdk'
 import flatMap from 'lodash.flatmap'
 import { useMemo } from 'react'
 

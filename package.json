@@ -5,11 +5,8 @@
   "private": true,
   "devDependencies": {
     "@ethersproject/experimental": "^5.0.1",
-    "@forbitswap/periphery": "^1.0.4",
-    "@forbitswap/sdk": "^3.1.2",
-    "@forbitswap/token-lists": "^1.0.2",
-    "@forbitswap/v2-core": "^1.0.3",
-    "@juiceswap/sdk": "0.0.1",
+    "@juiceswap/sdk": "^0.1.1",
+    "@juiceswap/token-lists": "^1.0.2",
     "@popperjs/core": "^2.4.4",
     "@reach/dialog": "^0.10.3",
     "@reach/portal": "^0.10.3",

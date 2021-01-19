@@ -1,4 +1,4 @@
-import { ChainId, Pair, Token } from '@forbitswap/sdk'
+import { ChainId, Pair, Token } from '@juiceswap/sdk'
 import flatMap from 'lodash.flatmap'
 import { useCallback, useMemo } from 'react'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux'

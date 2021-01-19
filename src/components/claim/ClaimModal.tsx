@@ -1,4 +1,4 @@
-import { JSBI, TokenAmount } from '@forbitswap/sdk'
+import { JSBI, TokenAmount } from '@juiceswap/sdk'
 import { isAddress } from 'ethers/lib/utils'
 import React, { useEffect, useState } from 'react'
 import { Text } from 'rebass'

@@ -1,4 +1,4 @@
-import { ChainId } from '@forbitswap/sdk'
+import { ChainId } from '@juiceswap/sdk'
 import React, { useContext } from 'react'
 import styled, { ThemeContext } from 'styled-components'
 import Modal from '../Modal'

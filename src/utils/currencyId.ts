@@ -1,4 +1,4 @@
-import { Currency, ETHER, Token } from '@forbitswap/sdk'
+import { Currency, ETHER, Token } from '@juiceswap/sdk'
 
 export function currencyId(currency: Currency): string {
   if (currency === ETHER) return 'ETH'

@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Fraction, Percent } from '@forbitswap/sdk'
+import { Currency, CurrencyAmount, Fraction, Percent } from '@juiceswap/sdk'
 import React from 'react'
 import { Text } from 'rebass'
 import { ButtonPrimary } from '../../components/Button'

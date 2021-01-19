@@ -1,4 +1,4 @@
-import { ChainId, JSBI, Pair, Route, Token, TokenAmount, Trade, TradeType } from '@forbitswap/sdk'
+import { ChainId, JSBI, Pair, Route, Token, TokenAmount, Trade, TradeType } from '@juiceswap/sdk'
 import { computeTradePriceBreakdown } from './prices'
 
 describe('prices', () => {

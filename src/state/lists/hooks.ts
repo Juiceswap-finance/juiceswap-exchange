@@ -1,5 +1,5 @@
-import { ChainId, Token } from '@forbitswap/sdk'
-import { Tags, TokenInfo, TokenList } from '@forbitswap/token-lists'
+import { ChainId, Token } from '@juiceswap/sdk'
+import { Tags, TokenInfo, TokenList } from '@juiceswap/token-lists'
 import { useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import { AppState } from '../index'

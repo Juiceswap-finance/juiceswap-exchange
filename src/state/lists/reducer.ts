@@ -1,6 +1,6 @@
 import { createReducer } from '@reduxjs/toolkit'
-import { getVersionUpgrade, VersionUpgrade } from '@forbitswap/token-lists'
-import { TokenList } from '@forbitswap/token-lists/dist/types'
+import { getVersionUpgrade, VersionUpgrade } from '@juiceswap/token-lists'
+import { TokenList } from '@juiceswap/token-lists/dist/types'
 import { DEFAULT_LIST_OF_LISTS, DEFAULT_TOKEN_LIST_URL } from '../../constants/lists'
 import { updateVersion } from '../global/actions'
 import { acceptListUpdate, addList, fetchTokenList, removeList, selectList } from './actions'

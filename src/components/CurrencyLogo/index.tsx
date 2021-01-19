@@ -1,4 +1,4 @@
-import { Currency, ETHER, Token } from '@forbitswap/sdk'
+import { Currency, ETHER, Token } from '@juiceswap/sdk'
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
 

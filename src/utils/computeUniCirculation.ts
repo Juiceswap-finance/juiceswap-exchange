@@ -1,4 +1,4 @@
-import { JSBI, Token, TokenAmount } from '@forbitswap/sdk'
+import { JSBI, Token, TokenAmount } from '@juiceswap/sdk'
 import { BigNumber } from 'ethers'
 import { STAKING_GENESIS } from '../state/stake/hooks'
 

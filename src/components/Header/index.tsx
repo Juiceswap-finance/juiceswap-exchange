@@ -1,4 +1,4 @@
-import { ChainId, TokenAmount } from '@forbitswap/sdk'
+import { ChainId, TokenAmount } from '@juiceswap/sdk'
 import React, { useEffect,useState } from 'react'
 import { Text } from 'rebass'
 import { NavLink } from 'react-router-dom'

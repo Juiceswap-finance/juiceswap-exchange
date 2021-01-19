@@ -1,5 +1,5 @@
-import { TokenList } from '@forbitswap/token-lists'
-import schema from '@forbitswap/token-lists/src/tokenlist.schema.json'
+import { TokenList } from '@juiceswap/token-lists'
+import schema from '@juiceswap/token-lists/src/tokenlist.schema.json'
 import Ajv from 'ajv'
 import contenthashToUri from './contenthashToUri'
 import { parseENSAddress } from './parseENSAddress'

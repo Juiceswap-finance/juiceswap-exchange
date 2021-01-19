@@ -1,13 +1,13 @@
-import { TokenAmount, Pair, Currency } from '@forbitswap/sdk'
+import { TokenAmount, Pair, Currency } from '@juiceswap/sdk'
 import { useMemo } from 'react'
-import { abi as IForbitswapPairABI } from '@forbitswap/v2-core/build/IForbitswapPair.json'
+import { abi as IJuiceswapPair } from '../constants/abis/IJuiceswapPair.json'
 import { Interface } from '@ethersproject/abi'
 import { useActiveWeb3React } from '../hooks'
 
 import { useMultipleContractSingleData } from '../state/multicall/hooks'
 import { wrappedCurrency } from '../utils/wrappedCurrency'
 
-const PAIR_INTERFACE = new Interface(IForbitswapPairABI)
+const PAIR_INTERFACE = new Interface(IJuiceswapPair)
 
 export enum PairState {
   LOADING,

@@ -1,4 +1,4 @@
-import { Currency } from '@forbitswap/sdk'
+import { Currency } from '@juiceswap/sdk'
 import React, { useCallback, useEffect, useState } from 'react'
 import ReactGA from 'react-ga'
 import useLast from '../../hooks/useLast'

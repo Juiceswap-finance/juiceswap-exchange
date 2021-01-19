@@ -1,4 +1,4 @@
-import { JSBI, Token } from '@forbitswap/sdk'
+import { JSBI, Token } from '@juiceswap/sdk'
 import React, { useCallback, useContext, useMemo, useState, useEffect } from 'react'
 import { ThemeContext } from 'styled-components'
 import { AutoColumn } from '../../components/Column'

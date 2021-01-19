@@ -1,4 +1,4 @@
-import { ChainId, JSBI, Token, TokenAmount } from '@forbitswap/sdk'
+import { ChainId, JSBI, Token, TokenAmount } from '@juiceswap/sdk'
 import { BigNumber } from 'ethers'
 import { ZERO_ADDRESS } from '../constants'
 import { computeUniCirculation } from './computeUniCirculation'

@@ -1,4 +1,4 @@
-import { currencyEquals, Trade } from '@forbitswap/sdk'
+import { currencyEquals, Trade } from '@juiceswap/sdk'
 import React, { useCallback, useMemo } from 'react'
 import TransactionConfirmationModal, {
   ConfirmationModalContent,

@@ -1,4 +1,4 @@
-import { TokenAmount } from '@forbitswap/sdk'
+import { TokenAmount } from '@juiceswap/sdk'
 import React, { useEffect } from 'react'
 import { X } from 'react-feather'
 import styled, { keyframes } from 'styled-components'

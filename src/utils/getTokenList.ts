@@ -4,6 +4,8 @@ import Ajv from 'ajv'
 import contenthashToUri from './contenthashToUri'
 import { parseENSAddress } from './parseENSAddress'
 import uriToHttp from './uriToHttp'
+import tokensJus from '../assets/juiceswap.tokens.json'
+
 
 const tokenListValidator = new Ajv({ allErrors: false }).compile(schema)
 
@@ -37,24 +39,32 @@ export default async function getTokenList(
   } else {
     urls = uriToHttp(listUrl)
   }
+  if (listUrl.indexOf('juiceswap.finance') !== -1) {
+    return tokensJus
+  }
+
   for (let i = 0; i < urls.length; i++) {
     const url = urls[i]
     const isLast = i === urls.length - 1
-    let response
+    let response: any;
     try {
+
       response = await fetch(url)
+
+
     } catch (error) {
       console.debug('Failed to fetch list', listUrl, error)
       if (isLast) throw new Error(`Failed to download list ${listUrl}`)
       continue
     }
 
-    if (!response.ok) {
+    if (!response && response.ok) {
+
       if (isLast) throw new Error(`Failed to download list ${listUrl}`)
       continue
     }
+    let json = await response.json();
 
-    const json = await response.json();
 
     if (!tokenListValidator(json)) {
       const validationErrors: string =
@@ -64,7 +74,9 @@ export default async function getTokenList(
         }, '') ?? 'unknown error'
       throw new Error(`Token list failed validation: ${validationErrors}`)
     }
+
     return json
   }
+
   throw new Error('Unrecognized list URL protocol.')
 }

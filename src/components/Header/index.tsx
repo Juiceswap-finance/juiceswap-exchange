@@ -4,7 +4,7 @@ import { Text } from 'rebass'
 import { NavLink } from 'react-router-dom'
 import { darken } from 'polished'
 import { useTranslation } from 'react-i18next'
-import { useIsDarkMode } from '../../state/user/hooks'
+// import { useIsDarkMode } from '../../state/user/hooks'
 
 import styled from 'styled-components'
 
@@ -23,6 +23,7 @@ import Menu from '../Menu'
 
 import Row, { RowFixed } from '../Row'
 import Web3Status from '../Web3Status'
+import Web3Switch from '../Web3Switch'
 import ClaimModal from '../claim/ClaimModal'
 import { useToggleSelfClaimModal, useShowClaimPopup } from '../../state/application/hooks'
 import { useUserHasAvailableClaim } from '../../state/claim/hooks'
@@ -75,11 +76,10 @@ const HeaderControls = styled.div`
     justify-self: center;
     width: 100%;
     max-width: 960px;
-    padding: 1rem;
+    padding: 5px;
     position: fixed;
     bottom: 0px;
     left: 0px;
-    width: 100%;
     z-index: 99;
     height: 72px;
     border-radius: 12px 12px 0 0;
@@ -90,7 +90,11 @@ const HeaderControls = styled.div`
 const HeaderElement = styled.div`
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 2px;
+
+  @media (min-width: 768px) {
+    gap: 6px;
+  }
 
   ${({ theme }) => theme.mediaWidth.upToMedium`
    flex-direction: row-reverse;
@@ -127,6 +131,7 @@ const AccountElement = styled.div<{ active: boolean }>`
   white-space: nowrap;
   width: 100%;
   cursor: pointer;
+  border: 1px solid #ffffff;
 
   :focus {
     border: 1px solid blue;
@@ -425,6 +430,9 @@ const StyledNav = styled(Navbar)`
       z-index: 11;
       display: block;
       margin-top: -4px;
+      top: 27px;
+      left: 8px;
+      border: 0;
 
       @media (max-width: 767px) {
         padding: 9px;
@@ -512,6 +520,7 @@ const StyledNav = styled(Navbar)`
   }
 `
 
+
 const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
   [ChainId.RINKEBY]: 'Rinkeby',
   [ChainId.ROPSTEN]: 'Ropsten',
@@ -523,7 +532,7 @@ const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
 export default function Header() {
   const { account, chainId } = useActiveWeb3React()
   const { t } = useTranslation()
-  const darkMode = useIsDarkMode()
+  // const darkMode = useIsDarkMode()
 
   const userEthBalance = useETHBalances(account ? [account] : [])?.[account ?? '']
   const [isDark] = useDarkModeManager()
@@ -586,9 +595,12 @@ export default function Header() {
                 <StyledNavLink id={`swap-nav-link`} to={'/swap'}>
                     {t('swap')}
                 </StyledNavLink>
-                  <a className={`${darkMode?'sc-qrIAp ebAwSE':'sc-qrIAp bZPGFH'}`} id={`swap-nav-link`} target="_blank"  href={"//www.juiceswap.finance/farms"}>
+                  {/* <a className={`${darkMode?'sc-qrIAp ebAwSE':'sc-qrIAp bZPGFH'}`} id={`swap-nav-link`} target="_blank"  href={"//www.juiceswap.finance/farms"}>
                     Yield Farm
-                  </a>
+                  </a> */}
+                 <StyledExternalLink id={`stake-nav-link`}   href={"//www.juiceswap.finance/farms"}>
+                    Yield Farm
+                </StyledExternalLink>
                 <StyledExternalLink id={`stake-nav-link`} href={"//www.juiceswap.finance/Reclamation"}>
                   Reclamation
                 </StyledExternalLink>
@@ -603,6 +615,8 @@ export default function Header() {
       </HeaderRow>
       <HeaderControls>
         <HeaderElement>
+          <Web3Switch />
+
           <HideSmall>
             {chainId && NETWORK_LABELS[chainId] && (
               <NetworkCard title={NETWORK_LABELS[chainId]}>{NETWORK_LABELS[chainId]}</NetworkCard>

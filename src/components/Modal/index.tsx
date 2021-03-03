@@ -63,6 +63,8 @@ const StyledDialogContent = styled(({ minHeight, maxHeight, mobile, isOpen, ...r
     `}
     ${({ theme, mobile }) => theme.mediaWidth.upToSmall`
       width:  85vw;
+      max-height: 50vh;
+      
       ${mobile &&
         css`
           width: 100vw;

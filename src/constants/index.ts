@@ -6,7 +6,7 @@ import { fortmatic, injected, portis, walletconnect, walletlink } from '../conne
 // export const ROUTER_ADDRESS = '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D'
 
 // Juice
-export const ROUTER_ADDRESS = '0xb0f6e185297F24cd5B4A2a71013F1273C659D19C' //UniswapV2Router02
+export const ROUTER_ADDRESS = '0x08E9CC75A1dC2988550ac68443D2203029d7C1dF' //UniswapV2Router02
 
 export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000'
 

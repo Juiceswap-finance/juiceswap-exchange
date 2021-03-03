@@ -5,7 +5,7 @@
   "private": true,
   "devDependencies": {
     "@ethersproject/experimental": "^5.0.1",
-    "@juiceswap/sdk": "^0.1.2",
+    "@juiceswap/sdk": "^0.1.6",
     "@juiceswap/token-lists": "^1.0.2",
     "@popperjs/core": "^2.4.4",
     "@reach/dialog": "^0.10.3",

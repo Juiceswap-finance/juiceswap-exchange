@@ -6,7 +6,7 @@ import { fortmatic, injected, portis, walletconnect, walletlink } from '../conne
 // export const ROUTER_ADDRESS = '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D'
 
 // Juice
-export const ROUTER_ADDRESS = '0x08E9CC75A1dC2988550ac68443D2203029d7C1dF' //UniswapV2Router02
+export const ROUTER_ADDRESS = '0xa219a865cA36Ad46736222187d3DE6c1241D37ac' //UniswapV2Router02
 
 export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000'
 
@@ -30,13 +30,13 @@ export const PROPOSAL_LENGTH_IN_DAYS = 7
 
 export const GOVERNANCE_ADDRESS = '0x5e4be8Bc9637f0EAA1A755019e06A68ce081D58F'
 
-const FBT_ADDRESS = '0x527e8d909d86ddb475c2a15002d8f4a2eda88459'
+const JUS_ADDRESS = '0x202b0534A49Fa306be03837a885Ab0B66bc40A5d'
 export const UNI: { [chainId in ChainId]: Token } = {
-  [ChainId.MAINNET]: new Token(ChainId.MAINNET, FBT_ADDRESS, 18, 'FBT', 'Uniswap'),
-  [ChainId.RINKEBY]: new Token(ChainId.RINKEBY, FBT_ADDRESS, 18, 'FBT', 'Uniswap'),
-  [ChainId.ROPSTEN]: new Token(ChainId.ROPSTEN, FBT_ADDRESS, 18, 'FBT', 'Uniswap'),
-  [ChainId.GÖRLI]: new Token(ChainId.GÖRLI, FBT_ADDRESS, 18, 'FBT', 'Uniswap'),
-  [ChainId.KOVAN]: new Token(ChainId.KOVAN, FBT_ADDRESS, 18, 'FBT', 'Uniswap')
+  [ChainId.MAINNET]: new Token(ChainId.MAINNET, JUS_ADDRESS, 18, 'JUS', 'JUS Token'),
+  [ChainId.RINKEBY]: new Token(ChainId.RINKEBY, JUS_ADDRESS, 18, 'JUS', 'JUS Token'),
+  [ChainId.ROPSTEN]: new Token(ChainId.ROPSTEN, JUS_ADDRESS, 18, 'JUS', 'JUS Token'),
+  [ChainId.GÖRLI]: new Token(ChainId.GÖRLI, JUS_ADDRESS, 18, 'JUS', 'JUS Token'),
+  [ChainId.KOVAN]: new Token(ChainId.KOVAN, JUS_ADDRESS, 18, 'JUS', 'JUS Token')
 }
 
 // TODO: specify merkle distributor for mainnet

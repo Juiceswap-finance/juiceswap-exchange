@@ -30,7 +30,8 @@ import Swap from './Swap/components/Tab'
 import { OpenClaimAddressModalAndRedirectToSwap, RedirectPathToSwapOnly, RedirectToSwap } from './Swap/redirects'
 
 import Vote from './Vote'
-import VotePage from './Vote/VotePage'
+import VotePage from './Vote/VotePage';
+import bgSwapv1 from "../assets/images/swapv1/swap-bg-v1.png";
 
 const AppWrapper = styled.div`
   display: flex;
@@ -59,7 +60,9 @@ const BodyWrapper = styled.div`
   overflow-x: hidden;
   z-index: 10;
   margin-top: 90px;
-
+  background-image: url(${bgSwapv1});
+  background-repeat: no-repeat;
+  background-size: cover;
   ${({ theme }) => theme.mediaWidth.upToSmall`
     padding: 16px;
     padding-top: 2rem;

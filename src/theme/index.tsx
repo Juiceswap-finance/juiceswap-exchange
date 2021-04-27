@@ -59,7 +59,7 @@ export function colors(darkMode: boolean): Colors {
     bg6: darkMode ? 'linear-gradient(90deg, rgb(15 236 229) 0%, rgb(9 143 221) 100%) rgb(222 206 232 / 87%)' : 'linear-gradient(90deg, rgb(15 236 229) 0%, rgb(9 143 221) 100%) rgb(222 206 232 / 87%)',
     bg7: darkMode ? '#374459' : '#FFFFFF',
     bg8: darkMode ? '#0B162C' : '#FFFFFF',
-    
+
     //specialty colors
     modalBG: darkMode ? 'rgba(0,0,0,.425)' : 'rgba(0,0,0,0.3)',
     advancedBG: darkMode ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.6)',
@@ -216,7 +216,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   font-feature-settings: 'ss01' on, 'ss02' on, 'cv01' on, 'cv03' on;
-  
+
 }
 `
 

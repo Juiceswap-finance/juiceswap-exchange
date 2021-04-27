@@ -271,7 +271,7 @@ export default function Swap() {
         tokens={urlLoadedTokens}
         onConfirm={handleConfirmTokenWarning}
       />
-      
+
         <Wrapper id="swap-page">
           <div><SwapPoolTabs active={'swap'} /></div>
 
@@ -306,12 +306,12 @@ export default function Swap() {
               <AutoRow justify={isExpertMode ? 'space-between' : 'center'} style={{ padding: '0 1rem' }}>
                 <ArrowWrapper clickable>
                   <ArrowDown
-                    size="16"
+                    size="30"
                     onClick={() => {
                       setApprovalSubmitted(false) // reset 2 step UI for approvals
                       onSwitchTokens()
                     }}
-                    color={currencies[Field.INPUT] && currencies[Field.OUTPUT] ? theme.primary1 : theme.text2}
+                    color="#fa8942"
                   />
                 </ArrowWrapper>
                 {recipient === null && !showWrap && isExpertMode ? (

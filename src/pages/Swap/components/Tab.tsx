@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import Swap from '../index'
-import Pool from '../../Pool/index'
-
+import Pool from '../../Pool/index';
 
 import styled from 'styled-components'
 
@@ -32,12 +31,14 @@ const NavTab = styled.div`
   padding: 20px;
 
   a {
+    z-index: 9;
     padding: 0 10px;
     font-size: 20px;
     font-weight: 600;
     cursor: pointer;
     width: 50%;
     text-align: center;
+    color: #ffffff;
 
     &.active {
       color
@@ -51,11 +52,28 @@ const NavTab = styled.div`
 
 const Tab = styled.div`
   position: relative;
-  width: 420px;
-  background: ${({ theme }) => theme.bg7};
-  box-shadow: rgb(0 0 0 / 12%) -6px 4px 10px 0px, rgba(0, 0, 0, 0.23) -1px 7px 18px 0px;
+  width: 576px;
+  // background: ${({ theme }) => theme.bg7};
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  // box-shadow: rgb(0 0 0 / 12%) -6px 4px 10px 0px, rgba(0, 0, 0, 0.23) -1px 7px 18px 0px;
   border-radius: 30px;
   padding: 1rem;
+
+  ::after{
+    top: 0;
+    left: 0;
+    background-image: url(/static/media/swap-orange-v1.5a7d6bec.png);
+    content: "";
+    position: absolute;
+    max-width: 560px;
+    width: 100%;
+    height: 560px;
+    z-index: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 
   @media (max-width: 640px) {
     display: grid;

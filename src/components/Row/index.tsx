@@ -9,10 +9,12 @@ const Row = styled(Box)<{ align?: string; padding?: string; border?: string; bor
   padding: ${({ padding }) => padding};
   border: ${({ border }) => border};
   border-radius: ${({ borderRadius }) => borderRadius};
+  text-align: center;
 `
 
 export const RowBetween = styled(Row)`
-  justify-content: space-between;
+  justify-content: center;
+  text-align: center;
 `
 
 export const RowFlat = styled.div`

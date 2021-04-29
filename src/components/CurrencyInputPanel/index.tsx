@@ -20,6 +20,10 @@ const InputRow = styled.div<{ selected: boolean }>`
   padding: ${({ selected }) => (selected ? '0.75rem 0.5rem 0.75rem 1rem' : '0.75rem 0.75rem 0.75rem 1rem')};
   justify-content: center;
 
+  @media (max-width: 768px){
+    padding: 0;
+  }
+
 `
 
 const CurrencySelect = styled.button<{ selected: boolean }>`
@@ -27,9 +31,9 @@ const CurrencySelect = styled.button<{ selected: boolean }>`
   height: 2.2rem;
   font-size: 20px;
   font-weight: 500;
-  background: ${({ selected, theme }) => (selected ? theme.bg1 : theme.gradient)};
+  // background: ${({ selected, theme }) => (selected ? theme.bg1 : theme.gradient)};
   color: ${({ selected, theme }) => (selected ? theme.text1 : theme.white)};
-  border-radius: 12px;
+  border-radius: 20px;
   box-shadow: ${({ selected }) => (selected ? 'none' : '0px 6px 10px rgba(0, 0, 0, 0.075)')};
   outline: none;
   cursor: pointer;
@@ -40,14 +44,20 @@ const CurrencySelect = styled.button<{ selected: boolean }>`
   box-shadow: 0 4px 4px 0 rgb(0 0 0 / 50%);
   font-weight: 700;
   background: #fff;
-  .open-currency-select-button{
-    :focus{
-      outline: none !important;
-    }
+  :focus{
+    outline: none !important;
   }
   :focus,
   :hover {
     // background-color: ${({ selected, theme }) => (selected ? theme.bg2 : darken(0.05, theme.primary1))};
+  }
+
+  @media (max-width: 768px){
+    height: 25px;
+    img{
+      width: 16px;
+      height: 16px;
+    }
   }
 `
 
@@ -58,6 +68,10 @@ const LabelRow = styled.div`
   font-size: 0.75rem;
   line-height: 1rem;
   padding: 0.75rem 1rem 0 1rem;
+
+  @media (max-width: 768px){
+    padding: 0
+  }
   span:hover {
     cursor: pointer;
     color: ${({ theme }) => darken(0.2, theme.text2)};
@@ -97,18 +111,32 @@ const Container = styled.div<{ hideInput: boolean }>`
     text-align: center;
     font-weight: 700;
     color: #56d90a;
+
+    @media (max-width: 768px){
+      margin: 0;
+      font-size: 18px;
+    }
   }
   .token-amount-input{
     background: transparent;
     color: #676767;
     width: 100%;
     text-align: center;
+    font-size: 18px;
   }
 `
 
 const StyledTokenName = styled.span<{ active?: boolean }>`
   ${({ active }) => (active ? '  margin: 0 0.25rem 0 0.75rem;' : '  margin: 0 0.25rem 0 0.25rem;')}
   font-size:  ${({ active }) => (active ? '20px' : '16px')};
+  &.token-symbol-container{
+    border-radius: 20px;
+
+    @media (max-width: 768px){
+      font-size: 12px;
+      margin: 0 2px 0 2px;
+    }
+  }
 `
 
 const StyledBalanceMax = styled.button`
@@ -137,6 +165,10 @@ const StyledBalanceMax = styled.button`
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
     margin-right: 0.5rem;
   `};
+  @media (max-width: 768px){
+    font-size: 12px;
+    height: 25px;
+  }
 `
 
 interface CurrencyInputPanelProps {
@@ -188,7 +220,10 @@ export default function CurrencyInputPanel({
   return (
     <InputPanel id={id}>
       <Container hideInput={hideInput}>
-        <h3>From</h3>
+        {/* <TYPE.body color={theme.text2} fontWeight={500} fontSize={14}>
+
+        </TYPE.body> */}
+        <h3>{label}</h3>
         {!hideInput && (
           <>
             <NumericalInput
@@ -200,15 +235,13 @@ export default function CurrencyInputPanel({
             />
             <LabelRow>
               <RowBetween>
-                {/* <TYPE.body color={theme.text2} fontWeight={500} fontSize={14}>
-                {label}
-              </TYPE.body> */}
                 {account && (
                   <TYPE.body
                     onClick={onMax}
                     color={theme.text2}
                     fontWeight={500}
                     fontSize={14}
+                    className="title-balance"
                     style={{
                       display: 'inline',
                       cursor: 'pointer'

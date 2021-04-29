@@ -3,14 +3,77 @@ import React from 'react'
 import { AlertTriangle } from 'react-feather'
 import styled, { css } from 'styled-components'
 import { Text } from 'rebass'
-import { AutoColumn } from '../Column'
+import { AutoColumn } from '../Column';
+import imgOrigan1 from "../../assets/images/swapv1/or.png";
+import imgOrigan2 from "../../assets/images/swapv1/or2.png"
 
 export const Wrapper = styled.div`
   position: relative;
   z-index:99;
-  margin-top: 60px;
-  onMax?: () => void
-  showMaxButton: boolean
+  padding: 40px 0;
+  onMax?: () => void;
+  showMaxButton: boolean;
+
+  &:before{
+    background-image: url(${imgOrigan1});
+    content: "";
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 186px;
+    width: 440px;
+    position: absolute;
+    top: 10px;
+    left: 53px;
+
+    @media (max-width: 768px){
+      top: 9px;
+      height: 103px;
+      width: 235px;
+      left: 32px;
+    }
+  }
+  &:after{
+    background-image: url(${imgOrigan2});
+    content: "";
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 192px;
+    width: 437px;
+    position: absolute;
+    bottom: 85px;
+    left: 10%;
+
+    @media (max-width: 768px){
+      height: 103px;
+      width: 235px;
+      left: 32px;
+      bottom: 75px;
+    }
+  }
+
+  .icon-dow-mid{
+    .img-dow-mid{
+    }
+
+    @media (max-width: 768px){
+      // margin-top: 10px;
+    }
+  }
+
+  @media (max-width: 768px){
+    padding: 0;
+    .content-from-to{
+      // margin-top: 15px;
+      grid-row-gap: 27px;
+      #swap-currency-input{
+        top: 15px;
+      }
+
+      #swap-currency-output{
+        bottom: 24px;
+      }
+    }
+  }
 `
 
 export const ArrowWrapper = styled.div<{ clickable: boolean }>`
@@ -34,18 +97,40 @@ export const SectionBreak = styled.div`
 `
 
 export const BottomGrouping = styled.div`
-  margin-top: 1rem;
+  // margin-top: 1rem;
+  text-align: center;
+  transform: translateY(55px);
+
+  @media (max-width: 768px){
+    transform: translateY(-10px);
+  }
+
+  .btn-connect-collect{
+    margin: auto;
+    border-radius: 40px;
+    color: #f77b00;
+    width: 300px;
+
+    @media (max-width: 768px){
+      width: 200px;
+      padding: 0px;
+      height: 35px;
+      div{
+        font-size: 16px;
+      }
+    }
+  }
 `
 
-export const ErrorText = styled(Text)<{ severity?: 0 | 1 | 2 | 3 | 4 }>`
+export const ErrorText = styled(Text) <{ severity?: 0 | 1 | 2 | 3 | 4 }>`
   color: ${({ theme, severity }) =>
     severity === 3 || severity === 4
       ? theme.red1
       : severity === 2
-      ? theme.yellow2
-      : severity === 1
-      ? theme.text1
-      : theme.green1};
+        ? theme.yellow2
+        : severity === 1
+          ? theme.text1
+          : theme.green1};
 `
 
 export const StyledBalanceMaxMini = styled.button`

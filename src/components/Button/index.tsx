@@ -56,7 +56,7 @@ export const ButtonPrimary = styled(Base)`
     box-shadow: 0 0 0 1pt ${({ theme }) => darken(0.1, theme.primary1)};
     background: linear-gradient(90deg, rgb(85 247 242) 0%, rgb(195 229 249) 100%)
   }
-  
+
   &:disabled {
     background: ${({ theme, altDisabledStyle }) => (altDisabledStyle ? theme.primary1 : theme.bg3)};
     color: ${({ theme, altDisabledStyle }) => (altDisabledStyle ? 'white' : theme.text3)};
@@ -140,7 +140,7 @@ export const ButtonSecondary = styled(Base)`
     border: 1px solid ${({ theme }) => theme.primary3};
     background: linear-gradient(90deg,rgb(47 217 212) 0%,rgb(25 123 179) 100%) rgb(57 190 235);
   }
-  
+
   &:active {
     box-shadow: 0 0 0 1pt ${({ theme }) => theme.primary4};
     border: 1px solid ${({ theme }) => theme.primary3};

@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
 import Swap from '../index'
 import Pool from '../../Pool/index';
+import bgJuice from "../../../assets/images/orange-pool-bg.png"
 
 import styled from 'styled-components'
-
-
-
 
 const HeaderFrame = styled.div`
   display: grid;
@@ -28,8 +26,12 @@ const NavTab = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 20px;
+  padding-top: 0;
+  margin-top: 20px;
 
+  @media (min-width: 768px){
+    padding-top: 50px;
+  }
   a {
     z-index: 9;
     padding: 0 10px;
@@ -41,7 +43,7 @@ const NavTab = styled.div`
     color: #ffffff;
 
     &.active {
-      color
+      text-decoration: none;
     }
 
     &:hover, &:active, focus {
@@ -64,15 +66,23 @@ const Tab = styled.div`
   ::after{
     top: 0;
     left: 0;
-    background-image: url(/static/media/swap-orange-v1.5a7d6bec.png);
+    background-image: url(${bgJuice});
     content: "";
     position: absolute;
-    max-width: 560px;
     width: 100%;
-    height: 560px;
+    max-width: 560px;
+    height: 598px;
     z-index: auto;
     background-size: cover;
     background-repeat: no-repeat;
+
+    @media (max-width: 768px){
+      max-width: 349px;
+      width: 100%;
+      height: 346px;
+      z-index: auto;
+      background-size: contain;
+    }
   }
 
   @media (max-width: 640px) {
@@ -88,18 +98,18 @@ export default function Header() {
 
   const [isTab, setTab] = useState('swap')
 
-  const ChangeTab = (value:string) => setTab(value)
+  const ChangeTab = (value: string) => setTab(value)
 
   return (
     <HeaderFrame>
       <Tab>
         <NavTab>
-          <a className="active" onClick={()=>ChangeTab('swap')}>
-              Swap
+          <a className="active" onClick={() => ChangeTab('swap')}>
+            Swap
           </a>
-          <a className="active" onClick={()=>ChangeTab('pool')}> Pool </a>
+          <a className="active" onClick={() => ChangeTab('pool')}> Pool </a>
         </NavTab>
-        {isTab==='swap'? <Swap/> : <Pool/>}
+        {isTab === 'swap' ? <Swap /> : <Pool />}
       </Tab>
     </HeaderFrame>
   )

@@ -73,6 +73,9 @@ export const ButtonLight = styled(Base)`
   color: #565A69;
   font-size: 16px;
   font-weight: 500;
+  max-width: 250px;
+  margin: auto;
+  border-radius: 35px;
 
   &:focus {
     box-shadow: 0 0 0 1pt ${({ theme, disabled }) => !disabled && darken(0.03, theme.primary5)};

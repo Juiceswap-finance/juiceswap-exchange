@@ -55,7 +55,9 @@
     position: fixed;
   }
 }
-
+body{
+  background: linear-gradient(90deg, rgba(181,255,241,1) 0%, rgba(83,183,255,1) 100%);
+}
 
 .icon-binance {
   width: 26px;

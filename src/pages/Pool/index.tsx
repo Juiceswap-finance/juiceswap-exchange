@@ -262,7 +262,7 @@ export default function Pool() {
                 </TitleRow>
 
                 {!account ? (
-                  <Card padding="40px">
+                  <Card>
                     <TYPE.body color={theme.text3} textAlign="center">
                       Connect to a wallet to view your liquidity.
                 </TYPE.body>

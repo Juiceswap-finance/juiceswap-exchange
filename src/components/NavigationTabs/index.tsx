@@ -46,10 +46,12 @@ const StyledNavLink = styled(NavLink).attrs({
 const ActiveText = styled.div`
   font-weight: 500;
   font-size: 20px;
+  color: #fff;
 `
 
 const StyledArrowLeft = styled(ArrowLeft)`
-  color: ${({ theme }) => theme.text1};
+  // color: ${({ theme }) => theme.text1};
+  color: #fff;
 `
 
 export function SwapPoolTabs({ active }: { active: 'swap' | 'pool' }) {
@@ -83,7 +85,7 @@ export function FindPoolTabs() {
 export function AddRemoveTabs({ adding, creating }: { adding: boolean; creating: boolean }) {
   return (
     <Tabs>
-      <RowBetween style={{ padding: '1rem' }}>
+      <RowBetween className="title-liquidity-create" style={{ justifyContent: "space-between" }}>
         <HistoryLink to="/swap">
           <StyledArrowLeft />
         </HistoryLink>

@@ -15,6 +15,10 @@ const Row = styled(Box)<{ align?: string; padding?: string; border?: string; bor
 export const RowBetween = styled(Row)`
   justify-content: center;
   text-align: center;
+
+  &.title-liquidity-create{
+    padding: 1rem 50px;
+  }
 `
 
 export const RowFlat = styled.div`

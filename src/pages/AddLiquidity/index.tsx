@@ -325,7 +325,7 @@ export default function AddLiquidity({
             )}
             pendingText={pendingText}
           />
-          <AutoColumn gap="20px">
+          <AutoColumn className="col-add-liquidity" gap="20px">
             {/* {noLiquidity ||
               (isCreate && (
                 <ColumnCenter>

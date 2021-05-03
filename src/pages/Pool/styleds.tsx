@@ -4,31 +4,84 @@ import bgContentPool from "../../assets/images/swapv1/Group_7330.png"
 
 export const Wrapper = styled.div`
   position: relative;
-  margin-top: 90px;
+  margin-top: 166px;
+
+  @media (max-width: 768px){
+    // margin-top: 34px;
+    margin-top: 120px;
+  }
+
+  @media (max-width: 414px){
+    margin-top: 100px;
+  }
+
+  @media (max-width: 375px){
+    margin-top: 83px;
+  }
 
   &:before{
     background-image: url(${bgContentPool});
     content: '';
-    height: 443px;
-    width: 443px;
+    height: 446px;
+    width: 446px;
     background-size: cover;
-    left: 50px;
+    left: -98px;
     right: 0;
     background-repeat: no-repeat;
     position: absolute;
-    bottom: 68px;
+    bottom: 36px;
 
     @media (max-width: 768px){
       content: '';
-      height: 235px;
-      width: 235px;
-      z-index: 2;
+      height: 377px;
+      width: 377px;
       background-size: cover;
-      left: 47px;
+      left: -73px;
       right: 0;
       background-repeat: no-repeat;
-      top: 80px;
+      top: -7px;
       position: absolute;
+    }
+
+    @media (max-width: 414px){
+      content: '';
+      height: 308px;
+      width: 308px;
+      background-size: cover;
+      left: -38px;
+      right: 0;
+      background-repeat: no-repeat;
+      top: -8px;
+    }
+
+    @media (max-width: 375px){
+      content: '';
+      height: 274px;
+      width: 274px;
+      background-size: cover;
+      left: -20px;
+      right: 0;
+      background-repeat: no-repeat;
+      top: 3px;
+    }
+  }
+
+  .col-add-liquidity{
+    grid-row-gap: 20px;
+    justify-content: center;
+
+    @media (max-width: 768px){
+      grid-row-gap: 54px;
+      transform: translate(5px, 21px);
+      z-index: 1;
+    }
+
+    @media (max-width: 414px){
+      grid-row-gap: 20px;
+    }
+
+    @media (max-width: 375px){
+      grid-row-gap: 15px;
     }
   }
 `

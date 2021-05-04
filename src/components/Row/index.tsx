@@ -17,7 +17,8 @@ export const RowBetween = styled(Row)`
   text-align: center;
 
   &.title-liquidity-create{
-    padding: 1rem 50px;
+    position: absolute;
+    top: -18px;
   }
 `
 

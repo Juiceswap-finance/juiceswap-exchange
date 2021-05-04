@@ -101,11 +101,11 @@ const InputPanel = styled.div<{ hideInput?: boolean }>`
   border-radius: ${({ hideInput }) => (hideInput ? '8px' : '20px')};
   // background-color: ${({ theme }) => theme.bg2};
   z-index: 1;
-  min-height: 160px;
+  // min-height: 160px;
 
-  @media (max-width: 768px){
-    min-height: 77px;
-  }
+  // @media (max-width: 576px){
+  //   min-height: 77px;
+  // }
 `
 
 const Container = styled.div<{ hideInput: boolean }>`
@@ -117,7 +117,7 @@ const Container = styled.div<{ hideInput: boolean }>`
     font-weight: 700;
     color: #56d90a;
 
-    @media (max-width: 768px){
+    @media (max-width: 576px){
       margin: 0;
       font-size: 18px;
     }
@@ -137,7 +137,7 @@ const StyledTokenName = styled.span<{ active?: boolean }>`
   &.token-symbol-container{
     border-radius: 20px;
 
-    @media (max-width: 768px){
+    @media (max-width: 576px){
       font-size: 12px;
       margin: 0 2px 0 2px;
     }

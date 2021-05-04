@@ -10,7 +10,7 @@ export const BodyWrapper = styled.div`
     // box-shadow: rgb(0 0 0 / 12%) -6px 4px 10px 0px, rgba(0,0,0,0.23) -1px 7px 18px 0px;
     border-radius: 30px;
     padding: 1rem;
-    left: -176px;
+    left: -178px;
     background-image: url(${bgJuice});
     content: "";
     width: 588px;
@@ -22,8 +22,8 @@ export const BodyWrapper = styled.div`
 
     @media (max-width: 768px){
       width: 492px;
-      height: 523px;
-      left: -137px;
+      height: 526px;
+      left: -122px;
       top: 0;
     }
 

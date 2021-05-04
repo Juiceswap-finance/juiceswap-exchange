@@ -43,7 +43,7 @@ const PageWrapper = styled(AutoColumn)`
       top: 121px;
       position: absolute;
 
-      @media (max-width: 768px){
+      @media (max-width: 414px){
         content: '';
         height: 235px;
         width: 235px;
@@ -61,7 +61,7 @@ const PageWrapper = styled(AutoColumn)`
       grid-row-gap: 80px;
       width: 94%;
 
-      @media (max-width: 768px){
+      @media (max-width: 414px){
         grid-row-gap: 34px;
         width: 100%;
 
@@ -107,7 +107,7 @@ const ButtonRow = styled(RowFixed)`
     box-shadow: 0 4px 4px 0 rgb(0 0 0 / 50%);
     border: none;
 
-    @media (max-width: 768px){
+    @media (max-width: 414px){
       font-size: 12px;
       padding: 5px;
 
@@ -140,7 +140,7 @@ const ResponsiveButtonSecondary = styled(ButtonSecondary)`
     width: 48%;
   `};
 
-  @media (max-width: 768px){
+  @media (max-width: 414px){
     font-size: 12px;
   }
 `
@@ -159,7 +159,7 @@ const EmptyProposals = styled.div`
   padding: 10px 0;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.4);
 
-  @media (max-width: 768px){
+  @media (max-width: 414px){
     padding: 0;
     max-width: 170px;
     div{
@@ -319,7 +319,7 @@ const BoxColumn = styled.div`
   width: 100% !important;
   position: absolute;
   z-index: 9;
-  margin-top: 80px;
+  margin-top: 120px;
 
   @media (max-width: 768px){
     margin-top: 100px;

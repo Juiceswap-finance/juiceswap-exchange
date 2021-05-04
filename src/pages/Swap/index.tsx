@@ -307,6 +307,7 @@ export default function Swap() {
               <ArrowWrapper clickable>
                 <ArrowDown
                   className="img-dow-mid"
+                  size={20}
                   onClick={() => {
                     setApprovalSubmitted(false) // reset 2 step UI for approvals
                     onSwitchTokens()

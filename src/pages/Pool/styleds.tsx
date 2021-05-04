@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
 
   @media (max-width: 768px){
     // margin-top: 34px;
-    margin-top: 120px;
+    margin-top: 99px;
   }
 
   @media (max-width: 414px){
@@ -36,10 +36,10 @@ export const Wrapper = styled.div`
       height: 377px;
       width: 377px;
       background-size: cover;
-      left: -73px;
+      left: -59px;
       right: 0;
       background-repeat: no-repeat;
-      top: -7px;
+      top: 14px;
       position: absolute;
     }
 
@@ -71,7 +71,7 @@ export const Wrapper = styled.div`
     justify-content: center;
 
     @media (max-width: 768px){
-      grid-row-gap: 54px;
+      grid-row-gap: 10px;
       transform: translate(5px, 21px);
       z-index: 1;
     }
@@ -82,6 +82,10 @@ export const Wrapper = styled.div`
 
     @media (max-width: 375px){
       grid-row-gap: 15px;
+    }
+
+    .btn-connect-wallet-liquidity{
+      transform: translateY(80px);
     }
   }
 `

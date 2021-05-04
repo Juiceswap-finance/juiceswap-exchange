@@ -20,7 +20,7 @@ const InputRow = styled.div<{ selected: boolean }>`
   padding: ${({ selected }) => (selected ? '0.75rem 0.5rem 0.75rem 1rem' : '0.75rem 0.75rem 0.75rem 1rem')};
   justify-content: center;
 
-  @media (max-width: 768px){
+  @media (max-width: 414px){
     padding: 0;
   }
 
@@ -52,7 +52,7 @@ const CurrencySelect = styled.button<{ selected: boolean }>`
     // background-color: ${({ selected, theme }) => (selected ? theme.bg2 : darken(0.05, theme.primary1))};
   }
 
-  @media (max-width: 768px){
+  @media (max-width: 414px){
     height: 25px;
     img{
       width: 16px;
@@ -69,7 +69,7 @@ const LabelRow = styled.div`
   line-height: 1rem;
   padding: 0.75rem 1rem 0 1rem;
 
-  @media (max-width: 768px){
+  @media (max-width: 414px){
     padding: 0
   }
   span:hover {
@@ -101,10 +101,14 @@ const InputPanel = styled.div<{ hideInput?: boolean }>`
   border-radius: ${({ hideInput }) => (hideInput ? '8px' : '20px')};
   // background-color: ${({ theme }) => theme.bg2};
   z-index: 1;
-  // min-height: 160px;
+  min-height: 158px;
 
   @media (max-width: 768px){
     min-height: 77px;
+  }
+
+   @media (max-width: 414px){
+    min-height: 83px;
   }
 `
 
@@ -117,7 +121,7 @@ const Container = styled.div<{ hideInput: boolean }>`
     font-weight: 700;
     color: #56d90a;
 
-    @media (max-width: 768px){
+    @media (max-width: 414px){
       margin: 0;
       font-size: 18px;
     }
@@ -137,7 +141,7 @@ const StyledTokenName = styled.span<{ active?: boolean }>`
   &.token-symbol-container{
     border-radius: 20px;
 
-    @media (max-width: 768px){
+    @media (max-width: 414px){
       font-size: 12px;
       margin: 0 2px 0 2px;
     }
@@ -170,7 +174,7 @@ const StyledBalanceMax = styled.button`
   ${({ theme }) => theme.mediaWidth.upToExtraSmall`
     margin-right: 0.5rem;
   `};
-  @media (max-width: 768px){
+  @media (max-width: 414px){
     font-size: 12px;
     height: 25px;
   }

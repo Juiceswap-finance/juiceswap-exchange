@@ -30,8 +30,13 @@ const NavTab = styled.div`
   margin-top: 20px;
 
   @media (min-width: 768px){
-    padding-top: 50px;
+    padding-top: 32x;
   }
+
+  @media (min-width: 414px){
+    padding-top: 50x;
+  }
+
   a {
     z-index: 9;
     padding: 0 10px;
@@ -76,12 +81,18 @@ const Tab = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
 
-    @media (max-width: 768px){
-      max-width: 349px;
-      width: 100%;
+    // @media (max-width: 768px){
+    //   left: 53px;
+    //   width: 435px;
+    //   height: 472px;
+    // }
+
+    @media (max-width: 414px){
+      width: 349px;
       height: 346px;
       z-index: auto;
       background-size: contain;
+      left: 0;
     }
   }
 

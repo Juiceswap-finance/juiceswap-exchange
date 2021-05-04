@@ -9,23 +9,41 @@ import imgOrigan2 from "../../assets/images/swapv1/or2.png"
 
 export const Wrapper = styled.div`
   position: relative;
-  z-index:99;
+  z-index: 9;
   padding: 40px 0;
   onMax?: () => void;
   showMaxButton: boolean;
+  transform: translateY(40px);
+
+
+  @media (max-width: 768px){
+    transform: translateY(45px);
+  }
+
+  @media (max-width: 414px){
+    padding: 13px 0;
+    transform: translateY(0px);
+  }
 
   &:before{
     background-image: url(${imgOrigan1});
     content: "";
     background-size: cover;
     background-repeat: no-repeat;
-    height: 186px;
-    width: 440px;
+    height: 177px;
+    width: 403px;
     position: absolute;
-    top: 10px;
-    left: 53px;
+    top: 22px;
+    left: 70px;
 
-    @media (max-width: 768px){
+    // @media (max-width: 768px){
+    //   top: 41px;
+    //   height: 139px;
+    //   width: 317px;
+    //   left: 19%;
+    // }
+
+    @media (max-width: 414px){
       top: 9px;
       height: 103px;
       width: 235px;
@@ -37,41 +55,51 @@ export const Wrapper = styled.div`
     content: "";
     background-size: cover;
     background-repeat: no-repeat;
-    height: 192px;
-    width: 437px;
+    height: 177px;
+    width: 403px;
     position: absolute;
-    bottom: 85px;
-    left: 10%;
+    bottom: 118px;
+    left: 70px;
 
     @media (max-width: 768px){
+      bottom: 120px;
+    }
+
+    @media (max-width: 414px){
       height: 103px;
       width: 235px;
       left: 32px;
-      bottom: 75px;
+      bottom: 70px;
     }
   }
 
   .icon-dow-mid{
     .img-dow-mid{
+      @media (max-width: 414px){
+        height: 13px;
+      }
     }
-
     @media (max-width: 768px){
       // margin-top: 10px;
     }
+
+
   }
+  .content-from-to{
+    grid-row-gap: 24px;
 
-  @media (max-width: 768px){
-    padding: 0;
-    .content-from-to{
-      // margin-top: 15px;
-      grid-row-gap: 27px;
-      #swap-currency-input{
-        top: 15px;
-      }
+    @media (max-width: 768px){
+      padding: 0;
 
-      #swap-currency-output{
-        bottom: 24px;
-      }
+      #swap-currency-output{}
+    }
+
+    @media (max-width: 768px){
+      grid-row-gap: 24px;
+    }
+
+    @media (max-width: 414px){
+      grid-row-gap: 18px;
     }
   }
 `
@@ -110,11 +138,17 @@ export const BottomGrouping = styled.div`
     border-radius: 40px;
     color: #f77b00;
     width: 300px;
+    transform: translateY(10px);
 
     @media (max-width: 768px){
       width: 200px;
+      transform: translateY(50px);
+    }
+
+    @media (max-width: 414px){
       padding: 0px;
       height: 35px;
+      transform: translateY(25px);
       div{
         font-size: 16px;
       }

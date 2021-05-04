@@ -16,6 +16,15 @@ export const RowBetween = styled(Row)`
   justify-content: center;
   text-align: center;
 
+
+  @media (max-width: 768px){
+    min-height: 15px;
+  }
+
+  @media (max-width: 414px){
+    min-height: 10px;
+  }
+
   &.title-liquidity-create{
     position: absolute;
     top: 45px;

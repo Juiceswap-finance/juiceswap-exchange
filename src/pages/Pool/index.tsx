@@ -18,41 +18,38 @@ import { useActiveWeb3React } from '../../hooks'
 import { usePairs } from '../../data/Reserves'
 import { toV2LiquidityToken, useTrackedTokenPairs } from '../../state/user/hooks'
 import { Dots } from '../../components/swap/styleds'
-import bgContentPool from "../../assets/images/swapv1/Group_7330.png"
+import bgContentPool from "../../assets/images/swapv1/bg-or2.png"
 // import { CardSection, DataCard, CardNoise, CardBGImage } from '../../components/earn/styled'
 // import { DataCard } from '../../components/earn/styled'
 
 const PageWrapper = styled(AutoColumn)`
   max-width: 640px;
   width: 100%;
-  z-index: 99;
+  z-index: 9;
 
   .content-pool{
-    z-index: 11;
-
     &:before{
       background-image: url(${bgContentPool});
       content: '';
-      height: 443px;
-      width: 443px;
+      height: 500px;
+      width: 467px;
       z-index: 2;
       background-size: cover;
-      left: 66px;
+      left: 45px;
       right: 0;
       background-repeat: no-repeat;
-      top: 121px;
+      top: -25px;
       position: absolute;
 
-      @media (max-width: 768px){
+      @media (max-width: 425px){
         content: '';
-        height: 235px;
-        width: 235px;
+        width: 337px;
+        height: 357px;
         z-index: 2;
         background-size: cover;
-        left: 47px;
-        right: 0;
+        left: 0;
         background-repeat: no-repeat;
-        top: 80px;
+        top: 0;
         position: absolute;
       }
     }

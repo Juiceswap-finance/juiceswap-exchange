@@ -27,10 +27,11 @@ const NavTab = styled.div`
   display: flex;
   justify-content: center;
   padding-top: 0;
-  margin-top: 20px;
+  // margin-top: 20px;
+  z-index: 11;
 
   @media (min-width: 768px){
-    padding-top: 50px;
+    // padding-top: 50px;
   }
   a {
     z-index: 9;
@@ -41,6 +42,7 @@ const NavTab = styled.div`
     width: 50%;
     text-align: center;
     color: #ffffff;
+    text-shadow: 2px 2px #1d1d1da1;
 
     &.active {
       text-decoration: none;
@@ -48,6 +50,7 @@ const NavTab = styled.div`
 
     &:hover, &:active, focus {
       color: #565A69;
+      text-shadow: 2px 2px #fff;
     }
   }
 `
@@ -66,7 +69,7 @@ const Tab = styled.div`
   ::after{
     top: 0;
     left: 0;
-    background-image: url(${bgJuice});
+    // background-image: url(${bgJuice});
     content: "";
     position: absolute;
     width: 100%;

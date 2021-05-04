@@ -4,12 +4,11 @@ import { AlertTriangle } from 'react-feather'
 import styled, { css } from 'styled-components'
 import { Text } from 'rebass'
 import { AutoColumn } from '../Column';
-import imgOrigan1 from "../../assets/images/swapv1/or.png";
-import imgOrigan2 from "../../assets/images/swapv1/or2.png"
+import imgOrigan1 from "../../assets/images/swapv1/or1.png";
 
 export const Wrapper = styled.div`
   position: relative;
-  z-index:99;
+  z-index: 8;
   padding: 40px 0;
   onMax?: () => void;
   showMaxButton: boolean;
@@ -19,61 +18,43 @@ export const Wrapper = styled.div`
     content: "";
     background-size: cover;
     background-repeat: no-repeat;
-    height: 186px;
-    width: 440px;
+    height: 100%;
+    width: 500px;
     position: absolute;
-    top: 10px;
-    left: 53px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     @media (max-width: 768px){
-      top: 9px;
-      height: 103px;
-      width: 235px;
-      left: 32px;
+      height: 530px;
+    }
+
+    @media (max-width: 576px){
+      height: 100%;
+      width: 343px;
+      position: absolute;
     }
   }
-  &:after{
-    background-image: url(${imgOrigan2});
-    content: "";
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 192px;
-    width: 437px;
-    position: absolute;
-    bottom: 85px;
-    left: 10%;
-
-    @media (max-width: 768px){
-      height: 103px;
-      width: 235px;
-      left: 32px;
-      bottom: 75px;
-    }
-  }
-
   .icon-dow-mid{
-    .img-dow-mid{
-    }
-
-    @media (max-width: 768px){
-      // margin-top: 10px;
-    }
+    .img-dow-mid{}
   }
+.content-from-to{
+  transform: translate(8px, 84px);
+    // grid-row-gap: 27px;
 
   @media (max-width: 768px){
+    transform: translate(8px, 58px);
+  }
+  @media (max-width: 576px){
+    #swap-currency-input{
+      top: 15px;
+    }
     padding: 0;
-    .content-from-to{
-      // margin-top: 15px;
-      grid-row-gap: 27px;
-      #swap-currency-input{
-        top: 15px;
-      }
-
-      #swap-currency-output{
-        bottom: 24px;
-      }
+    #swap-currency-output{
+      bottom: 24px;
     }
   }
+}
 `
 
 export const ArrowWrapper = styled.div<{ clickable: boolean }>`

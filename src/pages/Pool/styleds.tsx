@@ -1,13 +1,14 @@
 import { Text } from 'rebass'
 import styled from 'styled-components'
-import bgContentPool from "../../assets/images/swapv1/Group_7330.png"
+import bgContentPool from "../../assets/images/swapv1/or1.png"
 
 export const Wrapper = styled.div`
   position: relative;
-  margin-top: 90px;
+  top: 72px;
+  left: 7px;
 
   &:before{
-    background-image: url(${bgContentPool});
+    // background-image: url(${bgContentPool});
     content: '';
     height: 443px;
     width: 443px;

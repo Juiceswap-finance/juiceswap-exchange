@@ -18,12 +18,56 @@ import { useActiveWeb3React } from '../../hooks'
 import { usePairs } from '../../data/Reserves'
 import { toV2LiquidityToken, useTrackedTokenPairs } from '../../state/user/hooks'
 import { Dots } from '../../components/swap/styleds'
+import bgContentPool from "../../assets/images/swapv1/bg-or2.png"
 // import { CardSection, DataCard, CardNoise, CardBGImage } from '../../components/earn/styled'
 // import { DataCard } from '../../components/earn/styled'
 
 const PageWrapper = styled(AutoColumn)`
   max-width: 640px;
   width: 100%;
+  z-index: 9;
+
+  .content-pool{
+    &:before{
+      background-image: url(${bgContentPool});
+      content: '';
+      height: 528px;
+      width: 500px;
+      z-index: 2;
+      background-size: cover;
+      top: 16px;
+      left: 38px;
+      background-repeat: no-repeat;
+      position: absolute;
+
+      @media (max-width: 425px){
+        content: '';
+        width: 337px;
+        height: 357px;
+        z-index: 2;
+        background-size: cover;
+        left: 0;
+        background-repeat: no-repeat;
+        top: 0;
+        position: absolute;
+      }
+    }
+
+    .content-all-grid-pool{
+      grid-row-gap: 80px;
+      width: 94%;
+
+      @media (max-width: 768px){
+        grid-row-gap: 34px;
+        width: 100%;
+
+        .text-join-import{
+          font-size: 10px;
+        }
+      }
+    }
+  }
+
 `
 
 // const VoteCard = styled(DataCard)`
@@ -43,15 +87,36 @@ const TitleRow = styled(RowBetween)`
 const ButtonRow = styled(RowFixed)`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 200px;
+  margin: auto;
 
+  @media (max-width: 768px){
+    width: 110px;
+  }
   a {
+    background: #fff;
     width: 100% !important;
-    padding: 19px 8px;
+    color: #de4400;
+    border-radius: 40px;
     margin-bottom: 10px;
+    padding: 8px;
+    box-shadow: 0 4px 4px 0 rgb(0 0 0 / 50%);
+    border: none;
 
+    @media (max-width: 768px){
+      font-size: 12px;
+      padding: 5px;
+
+      .text-btn{
+        font-size: 12px;
+      }
+    }
     :active, :focus {
       box-shadow: unset;
+    }
+    :hover{
+      border: none;
+      text-decoration: none;
     }
   }
 
@@ -62,6 +127,7 @@ const ResponsiveButtonPrimary = styled(ButtonPrimary)`
   ${({ theme }) => theme.mediaWidth.upToSmall`
     width: 48%;
   `};
+
 `
 
 const ResponsiveButtonSecondary = styled(ButtonSecondary)`
@@ -69,17 +135,36 @@ const ResponsiveButtonSecondary = styled(ButtonSecondary)`
   ${({ theme }) => theme.mediaWidth.upToSmall`
     width: 48%;
   `};
+
+  @media (max-width: 768px){
+    font-size: 12px;
+  }
 `
 
 const EmptyProposals = styled.div`
   border: 1px solid ${({ theme }) => theme.text4};
-  padding: 16px 12px;
-  border-radius: 12px;
+  border-radius: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: rgb(0 0 0 / 19%);
+  color: #000000;
+  max-width: 200px;
+  margin: auto;
+  padding: 10px 0;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.4);
+
+  @media (max-width: 768px){
+    padding: 0;
+    max-width: 170px;
+    div{
+      font-size: 12px;
+    }
+
+  }
 `
+const ContentPoolBottomStyle = styled.div``;
 
 export default function Pool() {
   const theme = useContext(ThemeContext)
@@ -91,7 +176,7 @@ export default function Pool() {
     () => trackedTokenPairs.map(tokens => ({ liquidityToken: toV2LiquidityToken(tokens), tokens })),
     [trackedTokenPairs]
   )
-  console.log('liquidityTokens>>',tokenPairsWithLiquidityTokens)
+  console.log('liquidityTokens>>', tokenPairsWithLiquidityTokens)
   const liquidityTokens = useMemo(() => tokenPairsWithLiquidityTokens.map(tpwlt => tpwlt.liquidityToken), [
     tokenPairsWithLiquidityTokens
   ])
@@ -114,7 +199,7 @@ export default function Pool() {
     fetchingV2PairBalances || v2Pairs?.length < liquidityTokensWithBalances.length || v2Pairs?.some(V2Pair => !V2Pair)
 
   const allV2PairsWithLiquidity = v2Pairs.map(([, pair]) => pair).filter((v2Pair): v2Pair is Pair => Boolean(v2Pair))
-  console.log('allV2PairsWithLiquidity>>',allV2PairsWithLiquidity)
+  console.log('allV2PairsWithLiquidity>>', allV2PairsWithLiquidity)
   const hasV1Liquidity = useUserHasLiquidityInAllTokens()
 
   return (
@@ -149,73 +234,75 @@ export default function Pool() {
           </VoteCard>
         </BoxColumn> */}
 
-        <AutoColumn gap="lg" justify="center">
+        <AutoColumn gap="lg" justify="center" className="content-pool">
           <BoxColumn>
-          <AutoColumn gap="lg" style={{ width: '100%' }}>
-            <ButtonRow>
-              <ResponsiveButtonPrimary id="join-pool-button" as={Link} padding="6px 8px" to="/add/ETH">
-                <Text fontWeight={500} fontSize={16}>
-                  Add Liquidity
-                </Text>
-              </ResponsiveButtonPrimary>
+            <AutoColumn gap="lg" className="content-all-grid-pool">
+              <ButtonRow>
+                <ResponsiveButtonPrimary id="join-pool-button" as={Link} to="/add/ETH">
+                  <Text fontWeight={500} fontSize={16} className="text-btn">
+                    Add Liquidity
+                  </Text>
+                </ResponsiveButtonPrimary>
 
-              <ResponsiveButtonSecondary as={Link} padding="6px 8px" to="/create/ETH">
-                Create a pair
-              </ResponsiveButtonSecondary>
-            </ButtonRow>
+                <ResponsiveButtonSecondary as={Link} padding="6px 8px" to="/create/ETH">
+                  Create a pair
+                </ResponsiveButtonSecondary>
+              </ButtonRow>
+              <ContentPoolBottomStyle>
+                <TitleRow style={{}} padding={'0'}>
+                  <HideSmall>
+                    <TYPE.mediumHeader style={{ justifySelf: 'flex-start' }}>
+                      Your liquidity
+                    </TYPE.mediumHeader>
+                  </HideSmall>
+                </TitleRow>
 
-            <TitleRow style={{ }} padding={'0'}>
-              <HideSmall>
-                <TYPE.mediumHeader style={{ justifySelf: 'flex-start' }}>
-                  Your liquidity
-                </TYPE.mediumHeader>
-              </HideSmall>
-            </TitleRow>
-
-            {!account ? (
-              <Card padding="40px">
-                <TYPE.body color={theme.text3} textAlign="center">
-                  Connect to a wallet to view your liquidity.
+                {!account ? (
+                  <Card>
+                    <TYPE.body color={theme.text3} textAlign="center">
+                      Connect to a wallet to view your liquidity.
                 </TYPE.body>
-              </Card>
-            ) : v2IsLoading ? (
-              <EmptyProposals>
-                <TYPE.body color={theme.text3} textAlign="center">
-                  <Dots>Loading</Dots>
-                </TYPE.body>
-              </EmptyProposals>
-            ) : allV2PairsWithLiquidity?.length > 0 ? (
-              <>
-                <ButtonSecondary>
-                  <RowBetween>
-                    <ExternalLink href={'https://analytics.juiceswap.finance/accounts/' + account}>
-                      Account analytics and accrued fees
+                  </Card>
+                ) : v2IsLoading ? (
+                  <EmptyProposals>
+                    <TYPE.body color={theme.text3} textAlign="center">
+                      <Dots>Loading</Dots>
+                    </TYPE.body>
+                  </EmptyProposals>
+                ) : allV2PairsWithLiquidity?.length > 0 ? (
+                  <>
+                    <ButtonSecondary>
+                      <RowBetween>
+                        <ExternalLink href={'https://analytics.juiceswap.finance/accounts/' + account}>
+                          Account analytics and accrued fees
                     </ExternalLink>
-                    <span> ↗</span>
-                  </RowBetween>
-                </ButtonSecondary>
+                        <span> ↗</span>
+                      </RowBetween>
+                    </ButtonSecondary>
 
-                {allV2PairsWithLiquidity.map(v2Pair => (
-                  <FullPositionCard key={v2Pair.liquidityToken.address} pair={v2Pair} />
-                ))}
-              </>
-            ) : (
-              <EmptyProposals>
-                <TYPE.body color={theme.text3} textAlign="center">
-                  No liquidity found.
-                </TYPE.body>
-              </EmptyProposals>
-            )}
+                    {allV2PairsWithLiquidity.map(v2Pair => (
+                      <FullPositionCard key={v2Pair.liquidityToken.address} pair={v2Pair} />
+                    ))}
+                  </>
+                ) : (
+                        <EmptyProposals>
+                          <TYPE.body color="#777777" textAlign="center">
+                            No liquidity found.
+                          </TYPE.body>
+                        </EmptyProposals>
+                      )}
 
-            <AutoColumn justify={'center'} gap="md">
-              <Text textAlign="center" fontSize={14} style={{ padding: '.5rem 0 .5rem 0' }}>
-                {hasV1Liquidity ? 'Uniswap V1 liquidity found!' : "Don't see a pool you joined?"}{' '}
-                <StyledInternalLink id="import-pool-link" to={hasV1Liquidity ? '/migrate/v1' : '/find'}>
-                  {hasV1Liquidity ? 'Migrate now.' : 'Import it.'}
-                </StyledInternalLink>
-              </Text>
+                <AutoColumn justify={'center'} gap="md">
+                  <Text className="text-join-import" textAlign="center" fontSize={14} style={{ padding: '.5rem 0 .5rem 0' }}>
+                    {hasV1Liquidity ? 'Uniswap V1 liquidity found!' : "Don't see a pool you joined?"}{' '}
+                    <StyledInternalLink id="import-pool-link" to={hasV1Liquidity ? '/migrate/v1' : '/find'}>
+                      {hasV1Liquidity ? 'Migrate now.' : 'Import it.'}
+                    </StyledInternalLink>
+                  </Text>
+                </AutoColumn>
+              </ContentPoolBottomStyle>
+
             </AutoColumn>
-          </AutoColumn>
           </BoxColumn>
         </AutoColumn>
       </PageWrapper>
@@ -226,4 +313,11 @@ export default function Pool() {
 
 const BoxColumn = styled.div`
   width: 100% !important;
+  position: absolute;
+  z-index: 9;
+  transform: translate(8px,160px);
+
+  // @media (max-width: 768px){
+  //   margin-top: 100px;
+  // }
 `

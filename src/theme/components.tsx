@@ -173,6 +173,9 @@ export const CustomLightSpinner = styled(Spinner)<{ size: string }>`
 
 export const HideSmall = styled.span`
   ${({ theme }) => theme.mediaWidth.upToSmall`
-    display: none;
+    // display: none;
   `};
+  div{
+    font-size: 16px;
+  }
 `

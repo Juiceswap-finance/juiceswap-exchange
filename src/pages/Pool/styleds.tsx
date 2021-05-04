@@ -1,15 +1,44 @@
 import { Text } from 'rebass'
 import styled from 'styled-components'
+import bgContentPool from "../../assets/images/swapv1/or1.png"
 
 export const Wrapper = styled.div`
   position: relative;
+  top: 72px;
+  left: 7px;
+
+  &:before{
+    // background-image: url(${bgContentPool});
+    content: '';
+    height: 443px;
+    width: 443px;
+    background-size: cover;
+    left: 50px;
+    right: 0;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 68px;
+
+    @media (max-width: 768px){
+      content: '';
+      height: 235px;
+      width: 235px;
+      z-index: 2;
+      background-size: cover;
+      left: 47px;
+      right: 0;
+      background-repeat: no-repeat;
+      top: 80px;
+      position: absolute;
+    }
+  }
 `
 
 export const ClickableText = styled(Text)`
   :hover {
     cursor: pointer;
   }
-  
+
   color: #fff;
 `
 export const MaxButton = styled.button<{ width: string }>`

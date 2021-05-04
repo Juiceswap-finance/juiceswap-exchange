@@ -3,10 +3,58 @@ import React from 'react'
 import { AlertTriangle } from 'react-feather'
 import styled, { css } from 'styled-components'
 import { Text } from 'rebass'
-import { AutoColumn } from '../Column'
+import { AutoColumn } from '../Column';
+import imgOrigan1 from "../../assets/images/swapv1/or1.png";
 
 export const Wrapper = styled.div`
   position: relative;
+  z-index: 8;
+  padding: 40px 0;
+  // onMax?: () => void;
+  // showMaxButton: boolean;
+
+  &:before{
+    background-image: url(${imgOrigan1});
+    content: "";
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 525px;
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    @media (max-width: 768px){
+      height: 530px;
+    }
+
+    @media (max-width: 576px){
+      height: 100%;
+      width: 343px;
+      position: absolute;
+    }
+  }
+  .icon-dow-mid{
+    .img-dow-mid{}
+  }
+.content-from-to{
+  transform: translate(8px, 84px);
+    // grid-row-gap: 27px;
+
+  @media (max-width: 768px){
+    transform: translate(8px, 58px);
+  }
+  @media (max-width: 576px){
+    #swap-currency-input{
+      top: 15px;
+    }
+    padding: 0;
+    #swap-currency-output{
+      bottom: 24px;
+    }
+  }
+}
 `
 
 export const ArrowWrapper = styled.div<{ clickable: boolean }>`
@@ -30,18 +78,42 @@ export const SectionBreak = styled.div`
 `
 
 export const BottomGrouping = styled.div`
-  margin-top: 1rem;
+  // margin-top: 1rem;
+  text-align: center;
+  transform: translateY(55px);
+
+  @media (max-width: 768px){
+    transform: translateY(-10px);
+  }
+
+  .btn-connect-collect{
+    margin: auto;
+    border-radius: 40px;
+    color: #f77b00;
+    width: 300px;
+    transform: translateY(55px);
+
+    @media (max-width: 768px){
+      width: 200px;
+      padding: 0px;
+      height: 35px;
+
+      div {
+        font-size: 16px;
+      }
+    }
+  }
 `
 
-export const ErrorText = styled(Text)<{ severity?: 0 | 1 | 2 | 3 | 4 }>`
+export const ErrorText = styled(Text) <{ severity?: 0 | 1 | 2 | 3 | 4 }>`
   color: ${({ theme, severity }) =>
     severity === 3 || severity === 4
       ? theme.red1
       : severity === 2
-      ? theme.yellow2
-      : severity === 1
-      ? theme.text1
-      : theme.green1};
+        ? theme.yellow2
+        : severity === 1
+          ? theme.text1
+          : theme.green1};
 `
 
 export const StyledBalanceMaxMini = styled.button`

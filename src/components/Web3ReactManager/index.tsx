@@ -8,11 +8,13 @@ import { useEagerConnect, useInactiveListener } from '../../hooks'
 import { NetworkContextName } from '../../constants'
 import Loader from '../Loader'
 
+
 const MessageWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   height: 20rem;
+
 `
 
 const Message = styled.h2`

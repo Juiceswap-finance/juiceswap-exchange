@@ -8,7 +8,7 @@ import { RouteComponentProps } from 'react-router-dom'
 import { Text } from 'rebass'
 import { ThemeContext } from 'styled-components'
 import { ButtonError, ButtonLight, ButtonPrimary } from '../../components/Button'
-import { BlueCard, LightCard } from '../../components/Card'
+import { LightCard } from '../../components/Card'
 import { AutoColumn, ColumnCenter } from '../../components/Column'
 import TransactionConfirmationModal, { ConfirmationModalContent } from '../../components/TransactionConfirmationModal'
 import CurrencyInputPanel from '../../components/CurrencyInputPanel'
@@ -326,7 +326,7 @@ export default function AddLiquidity({
             pendingText={pendingText}
           />
           <AutoColumn gap="20px">
-            {noLiquidity ||
+            {/* {noLiquidity ||
               (isCreate && (
                 <ColumnCenter>
                   <BlueCard>
@@ -343,7 +343,7 @@ export default function AddLiquidity({
                     </AutoColumn>
                   </BlueCard>
                 </ColumnCenter>
-              ))}
+              ))} */}
             <CurrencyInputPanel
               value={formattedAmounts[Field.CURRENCY_A]}
               onUserInput={onFieldAInput}

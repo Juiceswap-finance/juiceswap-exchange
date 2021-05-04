@@ -65,6 +65,9 @@ export const ButtonPrimary = styled(Base)`
     border: 1px solid transparent;
     outline: none;
     opacity: ${({ altDisabledStyle }) => (altDisabledStyle ? '0.7' : '1')};
+    max-width: 250px;
+    margin: 0 auto;
+    transform: translateY(60px);
   }
 `
 
@@ -76,6 +79,7 @@ export const ButtonLight = styled(Base)`
   max-width: 250px;
   margin: auto;
   border-radius: 35px;
+  transform: translateY(70px);
 
   &:focus {
     box-shadow: 0 0 0 1pt ${({ theme, disabled }) => !disabled && darken(0.03, theme.primary5)};

@@ -31,14 +31,13 @@ const PageWrapper = styled(AutoColumn)`
     &:before{
       background-image: url(${bgContentPool});
       content: '';
-      height: 500px;
-      width: 467px;
+      height: 528px;
+      width: 500px;
       z-index: 2;
       background-size: cover;
-      left: 45px;
-      right: 0;
+      top: 16px;
+      left: 38px;
       background-repeat: no-repeat;
-      top: -25px;
       position: absolute;
 
       @media (max-width: 425px){
@@ -316,9 +315,9 @@ const BoxColumn = styled.div`
   width: 100% !important;
   position: absolute;
   z-index: 9;
-  margin-top: 80px;
+  transform: translate(8px,160px);
 
-  @media (max-width: 768px){
-    margin-top: 100px;
-  }
+  // @media (max-width: 768px){
+  //   margin-top: 100px;
+  // }
 `

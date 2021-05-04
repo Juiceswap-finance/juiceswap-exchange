@@ -27,12 +27,13 @@ const NavTab = styled.div`
   display: flex;
   justify-content: center;
   padding-top: 0;
-  // margin-top: 20px;
-  z-index: 11;
+  position: absolute;
+  top: 73px;
 
   @media (min-width: 768px){
     // padding-top: 50px;
   }
+
   a {
     z-index: 9;
     padding: 0 10px;

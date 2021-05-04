@@ -451,7 +451,7 @@ export default function Swap() {
                           })
                         }
                       }}
-                      className="btn-connect-collect"
+                      className="translate(8px,197px)"
                       id="swap-button"
                       disabled={!isValid || (priceImpactSeverity > 3 && !isExpertMode) || !!swapCallbackError}
                       error={isValid && priceImpactSeverity > 2 && !swapCallbackError}

@@ -10,15 +10,15 @@ export const Wrapper = styled.div`
   position: relative;
   z-index: 8;
   padding: 40px 0;
-  onMax?: () => void;
-  showMaxButton: boolean;
+  // onMax?: () => void;
+  // showMaxButton: boolean;
 
   &:before{
     background-image: url(${imgOrigan1});
     content: "";
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100%;
+    min-height: 525px;
     width: 500px;
     position: absolute;
     top: 50%;
@@ -91,12 +91,14 @@ export const BottomGrouping = styled.div`
     border-radius: 40px;
     color: #f77b00;
     width: 300px;
+    transform: translateY(55px);
 
     @media (max-width: 768px){
       width: 200px;
       padding: 0px;
       height: 35px;
-      div{
+
+      div {
         font-size: 16px;
       }
     }

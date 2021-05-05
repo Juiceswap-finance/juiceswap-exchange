@@ -6,6 +6,10 @@ export const Wrapper = styled.div`
   position: relative;
   top: 124px;
   left: 7px;
+
+  @media (max-width: 414px){
+    top: 97px;
+  }
 `
 
 export const ClickableText = styled(Text)`

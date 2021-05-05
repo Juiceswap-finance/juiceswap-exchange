@@ -22,6 +22,9 @@ import bgContentPool from "../../assets/images/swapv1/bg-or2.png"
 // import { CardSection, DataCard, CardNoise, CardBGImage } from '../../components/earn/styled'
 // import { DataCard } from '../../components/earn/styled'
 
+/**
+ * style pool
+ */
 const PageWrapper = styled(AutoColumn)`
   max-width: 640px;
   width: 100%;

@@ -6,19 +6,31 @@ import { Text } from 'rebass'
 import { AutoColumn } from '../Column';
 import imgOrigan1 from "../../assets/images/swapv1/or1.png";
 
+/**
+ * style swap
+ */
 export const Wrapper = styled.div`
   position: relative;
   z-index: 8;
-  padding: 40px 0;
+  left: 0;
   // onMax?: () => void;
   // showMaxButton: boolean;
+  transform: translateY(38px);
+
+  @media (max-width: 768px){
+    transform: translateY(65px);
+  }
+
+  @media (max-width: 414px){
+    transform: translateY(26px);
+  }
 
   &:before{
-    background-image: url(${imgOrigan1});
-    content: "";
+    // background-image: url(${imgOrigan1});
+    // content: "";
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 525px;
+    height: 528px;
     width: 500px;
     position: absolute;
     top: 50%;
@@ -51,7 +63,6 @@ export const Wrapper = styled.div`
     }
     padding: 0;
     #swap-currency-output{
-      bottom: 24px;
     }
   }
 }
@@ -78,12 +89,11 @@ export const SectionBreak = styled.div`
 `
 
 export const BottomGrouping = styled.div`
-  // margin-top: 1rem;
   text-align: center;
-  transform: translateY(55px);
+  transform: translateY(129px);
 
-  @media (max-width: 768px){
-    transform: translateY(-10px);
+  @media (max-width: 414px){
+    transform: translateY(85px);
   }
 
   .btn-connect-collect{
@@ -91,9 +101,8 @@ export const BottomGrouping = styled.div`
     border-radius: 40px;
     color: #f77b00;
     width: 300px;
-    transform: translateY(55px);
 
-    @media (max-width: 768px){
+    @media (max-width: 414px){
       width: 200px;
       padding: 0px;
       height: 35px;

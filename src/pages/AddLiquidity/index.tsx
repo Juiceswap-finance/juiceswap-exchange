@@ -325,7 +325,7 @@ export default function AddLiquidity({
             )}
             pendingText={pendingText}
           />
-          <AutoColumn gap="20px">
+          <AutoColumn gap="12px">
             {/* {noLiquidity ||
               (isCreate && (
                 <ColumnCenter>
@@ -392,15 +392,15 @@ export default function AddLiquidity({
             )}
 
             {!account ? (
-              <ButtonLight onClick={toggleWalletModal}>Connect Wallet</ButtonLight>
+              <ButtonLight className="btn-connect-wallet" onClick={toggleWalletModal}>Connect Wallet</ButtonLight>
             ) : (
-              <AutoColumn gap={'md'}>
+              <AutoColumn gap={'md'} className="btn-invalid-add-liqui">
                 {(approvalA === ApprovalState.NOT_APPROVED ||
                   approvalA === ApprovalState.PENDING ||
                   approvalB === ApprovalState.NOT_APPROVED ||
                   approvalB === ApprovalState.PENDING) &&
                   isValid && (
-                    <RowBetween>
+                    <RowBetween className="title-liquidity-create">
                       {approvalA !== ApprovalState.APPROVED && (
                         <ButtonPrimary
                           onClick={approveACallback}

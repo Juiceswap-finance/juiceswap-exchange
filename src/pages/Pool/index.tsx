@@ -18,46 +18,28 @@ import { useActiveWeb3React } from '../../hooks'
 import { usePairs } from '../../data/Reserves'
 import { toV2LiquidityToken, useTrackedTokenPairs } from '../../state/user/hooks'
 import { Dots } from '../../components/swap/styleds'
-import bgContentPool from "../../assets/images/swapv1/bg-or2.png"
 // import { CardSection, DataCard, CardNoise, CardBGImage } from '../../components/earn/styled'
 // import { DataCard } from '../../components/earn/styled'
 
+/**
+ * style pool
+ */
 const PageWrapper = styled(AutoColumn)`
-  max-width: 640px;
+  position: relative;
   width: 100%;
-  z-index: 9;
+  left: 0;
+  transform: translateY(12px);
+  z-index: 2;
+
+  @media (max-width: 414px){
+    transform: translateY(-38px);
+  }
 
   .content-pool{
-    &:before{
-      background-image: url(${bgContentPool});
-      content: '';
-      height: 528px;
-      width: 500px;
-      z-index: 2;
-      background-size: cover;
-      top: 16px;
-      left: 38px;
-      background-repeat: no-repeat;
-      position: absolute;
-
-      @media (max-width: 425px){
-        content: '';
-        width: 337px;
-        height: 357px;
-        z-index: 2;
-        background-size: cover;
-        left: 0;
-        background-repeat: no-repeat;
-        top: 0;
-        position: absolute;
-      }
-    }
-
     .content-all-grid-pool{
       grid-row-gap: 80px;
-      width: 94%;
 
-      @media (max-width: 768px){
+      @media (max-width: 414px){
         grid-row-gap: 34px;
         width: 100%;
 
@@ -103,7 +85,7 @@ const ButtonRow = styled(RowFixed)`
     box-shadow: 0 4px 4px 0 rgb(0 0 0 / 50%);
     border: none;
 
-    @media (max-width: 768px){
+    @media (max-width: 414px){
       font-size: 12px;
       padding: 5px;
 
@@ -136,7 +118,7 @@ const ResponsiveButtonSecondary = styled(ButtonSecondary)`
     width: 48%;
   `};
 
-  @media (max-width: 768px){
+  @media (max-width: 414px){
     font-size: 12px;
   }
 `
@@ -155,9 +137,10 @@ const EmptyProposals = styled.div`
   padding: 10px 0;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.4);
 
-  @media (max-width: 768px){
+  @media (max-width: 414px){
     padding: 0;
     max-width: 170px;
+
     div{
       font-size: 12px;
     }
@@ -203,10 +186,9 @@ export default function Pool() {
   const hasV1Liquidity = useUserHasLiquidityInAllTokens()
 
   return (
-    <>
-      <PageWrapper>
-        <SwapPoolTabs active={'pool'} />
-        {/* <BoxColumn>
+    <PageWrapper>
+      <SwapPoolTabs active={'pool'} />
+      {/* <BoxColumn>
           <VoteCard>
             <CardBGImage />
             <CardNoise />
@@ -234,79 +216,78 @@ export default function Pool() {
           </VoteCard>
         </BoxColumn> */}
 
-        <AutoColumn gap="lg" justify="center" className="content-pool">
-          <BoxColumn>
-            <AutoColumn gap="lg" className="content-all-grid-pool">
-              <ButtonRow>
-                <ResponsiveButtonPrimary id="join-pool-button" as={Link} to="/add/ETH">
-                  <Text fontWeight={500} fontSize={16} className="text-btn">
-                    Add Liquidity
+      <AutoColumn gap="lg" justify="center" className="content-pool">
+        <BoxColumn>
+          <AutoColumn gap="lg" className="content-all-grid-pool">
+            <ButtonRow>
+              <ResponsiveButtonPrimary id="join-pool-button" as={Link} to="/add/ETH">
+                <Text fontWeight={500} fontSize={16} className="text-btn">
+                  Add Liquidity
                   </Text>
-                </ResponsiveButtonPrimary>
+              </ResponsiveButtonPrimary>
 
-                <ResponsiveButtonSecondary as={Link} padding="6px 8px" to="/create/ETH">
-                  Create a pair
+              <ResponsiveButtonSecondary as={Link} padding="6px 8px" to="/create/ETH">
+                Create a pair
                 </ResponsiveButtonSecondary>
-              </ButtonRow>
-              <ContentPoolBottomStyle>
-                <TitleRow style={{}} padding={'0'}>
-                  <HideSmall>
-                    <TYPE.mediumHeader style={{ justifySelf: 'flex-start' }}>
-                      Your liquidity
+            </ButtonRow>
+            <ContentPoolBottomStyle>
+              <TitleRow style={{}} padding={'0'}>
+                <HideSmall>
+                  <TYPE.mediumHeader style={{ justifySelf: 'flex-start' }}>
+                    Your liquidity
                     </TYPE.mediumHeader>
-                  </HideSmall>
-                </TitleRow>
+                </HideSmall>
+              </TitleRow>
 
-                {!account ? (
-                  <Card>
-                    <TYPE.body color={theme.text3} textAlign="center">
-                      Connect to a wallet to view your liquidity.
+              {!account ? (
+                <Card>
+                  <TYPE.body color={theme.text3} className="text-connect-view" textAlign="center">
+                    Connect to a wallet to view your liquidity.
                 </TYPE.body>
-                  </Card>
-                ) : v2IsLoading ? (
-                  <EmptyProposals>
-                    <TYPE.body color={theme.text3} textAlign="center">
-                      <Dots>Loading</Dots>
-                    </TYPE.body>
-                  </EmptyProposals>
-                ) : allV2PairsWithLiquidity?.length > 0 ? (
-                  <>
-                    <ButtonSecondary>
-                      <RowBetween>
-                        <ExternalLink href={'https://analytics.juiceswap.finance/accounts/' + account}>
-                          Account analytics and accrued fees
+                </Card>
+              ) : v2IsLoading ? (
+                <EmptyProposals>
+                  <TYPE.body color={theme.text3} textAlign="center">
+                    <Dots>Loading</Dots>
+                  </TYPE.body>
+                </EmptyProposals>
+              ) : allV2PairsWithLiquidity?.length > 0 ? (
+                <>
+                  <ButtonSecondary>
+                    <RowBetween>
+                      <ExternalLink href={'https://analytics.juiceswap.finance/accounts/' + account}>
+                        Account analytics and accrued fees
                     </ExternalLink>
-                        <span> ↗</span>
-                      </RowBetween>
-                    </ButtonSecondary>
+                      <span> ↗</span>
+                    </RowBetween>
+                  </ButtonSecondary>
 
-                    {allV2PairsWithLiquidity.map(v2Pair => (
-                      <FullPositionCard key={v2Pair.liquidityToken.address} pair={v2Pair} />
-                    ))}
-                  </>
-                ) : (
-                        <EmptyProposals>
-                          <TYPE.body color="#777777" textAlign="center">
-                            No liquidity found.
+                  {allV2PairsWithLiquidity.map(v2Pair => (
+                    <FullPositionCard key={v2Pair.liquidityToken.address} pair={v2Pair} />
+                  ))}
+                </>
+              ) : (
+                      <EmptyProposals>
+                        <TYPE.body color="#777777" textAlign="center">
+                          No liquidity found.
                           </TYPE.body>
-                        </EmptyProposals>
-                      )}
+                      </EmptyProposals>
+                    )}
 
-                <AutoColumn justify={'center'} gap="md">
-                  <Text className="text-join-import" textAlign="center" fontSize={14} style={{ padding: '.5rem 0 .5rem 0' }}>
-                    {hasV1Liquidity ? 'Uniswap V1 liquidity found!' : "Don't see a pool you joined?"}{' '}
-                    <StyledInternalLink id="import-pool-link" to={hasV1Liquidity ? '/migrate/v1' : '/find'}>
-                      {hasV1Liquidity ? 'Migrate now.' : 'Import it.'}
-                    </StyledInternalLink>
-                  </Text>
-                </AutoColumn>
-              </ContentPoolBottomStyle>
+              <AutoColumn justify={'center'} gap="md">
+                <Text className="text-join-import" textAlign="center" fontSize={14} style={{ padding: '.5rem 0 .5rem 0' }}>
+                  {hasV1Liquidity ? 'Uniswap V1 liquidity found!' : "Don't see a pool you joined?"}{' '}
+                  <StyledInternalLink id="import-pool-link" to={hasV1Liquidity ? '/migrate/v1' : '/find'}>
+                    {hasV1Liquidity ? 'Migrate now.' : 'Import it.'}
+                  </StyledInternalLink>
+                </Text>
+              </AutoColumn>
+            </ContentPoolBottomStyle>
 
-            </AutoColumn>
-          </BoxColumn>
-        </AutoColumn>
-      </PageWrapper>
-    </>
+          </AutoColumn>
+        </BoxColumn>
+      </AutoColumn>
+    </PageWrapper>
   )
 }
 

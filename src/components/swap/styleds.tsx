@@ -6,6 +6,9 @@ import { Text } from 'rebass'
 import { AutoColumn } from '../Column';
 import imgOrigan1 from "../../assets/images/swapv1/or1.png";
 
+/**
+ * style swap
+ */
 export const Wrapper = styled.div`
   position: relative;
   z-index: 8;
@@ -18,7 +21,7 @@ export const Wrapper = styled.div`
     content: "";
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 525px;
+    height: 528px;
     width: 500px;
     position: absolute;
     top: 50%;

@@ -52,16 +52,14 @@ export const Wrapper = styled.div`
   }
 .content-from-to{
   transform: translate(8px, 84px);
-    // grid-row-gap: 27px;
 
   @media (max-width: 768px){
     transform: translate(8px, 58px);
   }
   @media (max-width: 576px){
     #swap-currency-input{
-      top: 15px;
+      top: 5px;
     }
-    padding: 0;
     #swap-currency-output{
     }
   }

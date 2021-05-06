@@ -37,7 +37,7 @@ const PageWrapper = styled(AutoColumn)`
 
   .content-pool{
     .content-all-grid-pool{
-      grid-row-gap: 80px;
+      grid-row-gap: 70px;
 
       @media (max-width: 414px){
         grid-row-gap: 34px;
@@ -296,7 +296,7 @@ const BoxColumn = styled.div`
   width: 100% !important;
   position: absolute;
   z-index: 9;
-  transform: translate(8px,160px);
+  transform: translate(8px,163px);
 
   // @media (max-width: 768px){
   //   margin-top: 100px;

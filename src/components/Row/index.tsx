@@ -18,7 +18,13 @@ export const RowBetween = styled(Row)`
 
   &.title-liquidity-create{
     position: absolute;
-    top: 65px;
+    top: 46px;
+    width: 315px;
+
+    @media (max-width: 414px){
+      top: 33px;
+      width: 265px;
+    }
   }
 `
 

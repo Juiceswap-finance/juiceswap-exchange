@@ -19,6 +19,9 @@ export const AutoColumn = styled.div<{
   grid-auto-rows: auto;
   grid-row-gap: ${({ gap }) => (gap === 'sm' && '8px') || (gap === 'md' && '12px') || (gap === 'lg' && '24px') || gap};
   justify-items: ${({ justify }) => justify && justify};
+  &.btn-invalid-add-liqui{
+    transform: translateY(30px);
+  }
 `
 
 export default Column

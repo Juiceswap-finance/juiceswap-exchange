@@ -10,6 +10,12 @@ const Card = styled(Box)<{ padding?: string; border?: string; borderRadius?: str
   // padding: ${({ padding }) => padding};
   border: ${({ border }) => border};
   border-radius: ${({ borderRadius }) => borderRadius};
+
+  .text-connect-view{
+    @media (max-width: 414px){
+      font-size: 12px
+    }
+  }
 `
 export default Card
 

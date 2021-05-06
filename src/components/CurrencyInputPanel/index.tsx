@@ -70,7 +70,7 @@ const LabelRow = styled.div`
   padding: 0.75rem 1rem 0 1rem;
 
   @media (max-width: 414px){
-    padding: 0
+    padding: 3px;
   }
 
   span:hover {
@@ -152,11 +152,11 @@ const StyledBalanceMax = styled.button`
   box-shadow: 0 4px 4px 0 rgb(0 0 0 / 50%);
   border: none;
   font-weight: 700;
-  height: 28px;
+  height: 32px;
   background-color: #fff;
   // border: 1px solid ${({ theme }) => theme.text6};
   border-radius: 0.5rem;
-  font-size: 0.875rem;
+  font-size: 20px;
   cursor: pointer;
   margin-right: 0.5rem;
   // color: ${({ theme }) => theme.text1};

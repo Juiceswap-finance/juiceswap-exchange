@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   position: relative;
-  top: 124px;
+  top: 131px;
   left: 7px;
 
   @media (max-width: 414px){

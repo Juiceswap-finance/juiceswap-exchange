@@ -29,10 +29,10 @@ const NavTab = styled.div`
   justify-content: center;
   padding-top: 0;
   position: absolute;
-  top: 73px;
+  top: 45px;
 
   @media (max-width: 414px){
-    top: 50px;
+    top: 40px;
   }
 
   a {

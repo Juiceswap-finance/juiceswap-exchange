@@ -4,7 +4,6 @@ import { AlertTriangle } from 'react-feather'
 import styled, { css } from 'styled-components'
 import { Text } from 'rebass'
 import { AutoColumn } from '../Column';
-import imgOrigan1 from "../../assets/images/swapv1/or1.png";
 
 /**
  * style swap
@@ -15,50 +14,20 @@ export const Wrapper = styled.div`
   left: 0;
   // onMax?: () => void;
   // showMaxButton: boolean;
-  transform: translateY(38px);
+  transform: translateY(252px);
 
   @media (max-width: 768px){
-    transform: translateY(65px);
+    transform: translateY(253px);
   }
 
   @media (max-width: 414px){
-    transform: translateY(26px);
-  }
-
-  &:before{
-    // background-image: url(${imgOrigan1});
-    // content: "";
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 528px;
-    width: 500px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    @media (max-width: 768px){
-      height: 530px;
-    }
-
-    @media (max-width: 576px){
-      height: 100%;
-      width: 343px;
-      position: absolute;
-    }
-  }
-  .icon-dow-mid{
-    .img-dow-mid{}
+    transform: translateY(178px);
   }
 .content-from-to{
-  transform: translate(8px, 84px);
-
-  @media (max-width: 768px){
-    transform: translate(8px, 58px);
-  }
-  @media (max-width: 576px){
+  @media (max-width: 768px){}
+  @media (max-width: 414px){
+    grid-row-gap: 4px;
     #swap-currency-input{
-      top: 5px;
     }
     #swap-currency-output{
     }
@@ -88,10 +57,10 @@ export const SectionBreak = styled.div`
 
 export const BottomGrouping = styled.div`
   text-align: center;
-  transform: translateY(129px);
+  transform: translateY(152px);
 
   @media (max-width: 414px){
-    transform: translateY(85px);
+    transform: translateY(100px);
   }
 
   .btn-connect-collect{

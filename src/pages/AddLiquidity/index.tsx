@@ -325,7 +325,7 @@ export default function AddLiquidity({
             )}
             pendingText={pendingText}
           />
-          <AutoColumn gap="12px">
+          <AutoColumn className="grid-col-addliqui" gap="12px">
             {/* {noLiquidity ||
               (isCreate && (
                 <ColumnCenter>
@@ -403,6 +403,7 @@ export default function AddLiquidity({
                     <RowBetween className="title-liquidity-create">
                       {approvalA !== ApprovalState.APPROVED && (
                         <ButtonPrimary
+                          className="icon-back-addquility"
                           onClick={approveACallback}
                           disabled={approvalA === ApprovalState.PENDING}
                           width={approvalB !== ApprovalState.APPROVED ? '48%' : '100%'}

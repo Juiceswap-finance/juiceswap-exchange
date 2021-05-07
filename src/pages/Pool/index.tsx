@@ -28,16 +28,16 @@ const PageWrapper = styled(AutoColumn)`
   position: relative;
   width: 100%;
   left: 0;
-  transform: translateY(12px);
+  top: 250px;
   z-index: 2;
 
   @media (max-width: 414px){
-    transform: translateY(-38px);
+    top: 178px;
   }
 
   .content-pool{
     .content-all-grid-pool{
-      grid-row-gap: 70px;
+      grid-row-gap: 56px;
 
       @media (max-width: 414px){
         grid-row-gap: 34px;
@@ -80,7 +80,6 @@ const ButtonRow = styled(RowFixed)`
     width: 100% !important;
     color: #de4400;
     border-radius: 40px;
-    margin-bottom: 10px;
     padding: 8px;
     box-shadow: 0 4px 4px 0 rgb(0 0 0 / 50%);
     border: none;
@@ -97,9 +96,14 @@ const ButtonRow = styled(RowFixed)`
       box-shadow: unset;
     }
     :hover{
+      background-image: linear-gradient(to right, #78db5d, #9efa80 3%, #ffb462 97%, rgba(237, 156, 74, 0.7) 100%);
       border: none;
       text-decoration: none;
+      color: #fff;
     }
+  }
+  #join-pool-button{
+    margin-bottom: 10px;
   }
 
 `
@@ -226,7 +230,7 @@ export default function Pool() {
                   </Text>
               </ResponsiveButtonPrimary>
 
-              <ResponsiveButtonSecondary as={Link} padding="6px 8px" to="/create/ETH">
+              <ResponsiveButtonSecondary as={Link} to="/create/ETH">
                 Create a pair
                 </ResponsiveButtonSecondary>
             </ButtonRow>
@@ -296,7 +300,6 @@ const BoxColumn = styled.div`
   width: 100% !important;
   position: absolute;
   z-index: 9;
-  transform: translate(8px,163px);
 
   // @media (max-width: 768px){
   //   margin-top: 100px;

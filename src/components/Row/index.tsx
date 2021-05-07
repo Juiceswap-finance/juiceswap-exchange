@@ -13,13 +13,18 @@ const Row = styled(Box)<{ align?: string; padding?: string; border?: string; bor
 `
 
 export const RowBetween = styled(Row)`
-  justify-content: center;
-  text-align: center;
+  justify-content: right;
+  text-align: right;
+  display: block;
+  &.title-balance{
+    min-height: 30px;
+  }
 
   &.title-liquidity-create{
+    display: flex;
     position: absolute;
-    top: 46px;
-    width: 341px;
+    top: 83px;
+    width: 397px;
 
     @media (max-width: 414px){
       top: 33px;

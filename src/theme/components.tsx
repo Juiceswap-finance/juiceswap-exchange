@@ -176,6 +176,11 @@ export const HideSmall = styled.span`
     // display: none;
   `};
   div{
-    font-size: 16px;
+    text-align: center;
+    font-size: 24px;
+
+    @media (max-width: 414px){
+      font-size: 18px;
+    }
   }
 `

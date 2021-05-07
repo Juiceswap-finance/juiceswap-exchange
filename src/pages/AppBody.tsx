@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import bgJuice from "../assets/images/swapv1/bg-or2.png";
+import bgJuice from "../assets/images/swapv1/br2.png";
 
 export const BodyWrapper = styled.div`
   // box-shadow: rgb(0 0 0 / 12%) -6px 4px 10px 0px, rgba(0,0,0,0.23) -1px 7px 18px 0px;
@@ -11,8 +11,8 @@ export const BodyWrapper = styled.div`
     background-image: url(${bgJuice});
     content: "";
     top: 0;
-    height: 528px;
-    width: 500px;
+    height: 640px;
+    width: 515px;
     background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
@@ -20,10 +20,9 @@ export const BodyWrapper = styled.div`
     transform: translateX(-50%);
 
     @media (max-width: 414px){
-      height: 375px;
-      width: 348px;
+      height: 455px;
+      width: 365px;
     }
-
   }
 `
 

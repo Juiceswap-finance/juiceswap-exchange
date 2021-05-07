@@ -4,11 +4,11 @@ import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   position: relative;
-  top: 131px;
-  left: 7px;
+  top: 258px;
+  left: 0px;
 
   @media (max-width: 414px){
-    top: 97px;
+    top: 180px;
   }
 `
 

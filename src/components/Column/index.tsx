@@ -20,7 +20,16 @@ export const AutoColumn = styled.div<{
   grid-row-gap: ${({ gap }) => (gap === 'sm' && '8px') || (gap === 'md' && '12px') || (gap === 'lg' && '24px') || gap};
   justify-items: ${({ justify }) => justify && justify};
   &.btn-invalid-add-liqui{
-    transform: translateY(54px);
+    transform: translateY(163px);
+
+    @media (max-width: 414px){
+      transform: translateY(115px);
+    }
+  }
+  &.grid-col-addliqui{
+    @media (max-width: 414px){
+      grid-row-gap: 4px;
+    }
   }
 `
 

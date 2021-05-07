@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import Swap from '../index'
 import Pool from '../../Pool/index';
 import styled from 'styled-components';
-import bgContentPool from "../../../assets/images/swapv1/bg-or2.png"
-import imgOrigan1 from "../../../assets/images/swapv1/or1.png";
+import bgContentPool from "../../../assets/images/swapv1/br2.png"
 
 
 const HeaderFrame = styled.div`
@@ -29,22 +28,31 @@ const NavTab = styled.div`
   justify-content: center;
   padding-top: 0;
   position: absolute;
-  top: 45px;
+  top: 188px;
+  left: 50%;
+  z-index: 2;
+  transform: translateX(-50%);
+  max-width: 300px;
 
   @media (max-width: 414px){
-    top: 40px;
+    top: 136px;
+    max-width: 245px;
   }
 
   a {
     z-index: 9;
     padding: 0 10px;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 600;
     cursor: pointer;
     width: 50%;
     text-align: center;
     color: #ffffff;
     text-shadow: 2px 2px #1d1d1da1;
+
+    @media (max-width: 414px){
+      font-size: 18px;
+    }
 
     &.active {
       text-decoration: none;
@@ -75,10 +83,10 @@ export default function Header() {
     }
 
     &:before{
-      background-image: url(${isTab === 'swap' ? imgOrigan1 : bgContentPool});
+      background-image: url(${bgContentPool});
       content: '';
-      height: 528px;
-      width: 500px;
+      height: 640px;
+      width: 515px;
       z-index: 2;
       background-size: cover;
       background-repeat: no-repeat;
@@ -87,8 +95,8 @@ export default function Header() {
       transform: translateX(-50%);
 
       @media (max-width: 414px) {
-        height: 375px;
-        width: 348px;
+        height: 455px;
+        width: 365px;
       }
 
       @media (max-width: 375px) {}

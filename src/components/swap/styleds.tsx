@@ -17,7 +17,7 @@ export const Wrapper = styled.div`
   transform: translateY(252px);
 
   @media (max-width: 768px){
-    transform: translateY(194px);
+    transform: translateY(253px);
   }
 
   @media (max-width: 414px){

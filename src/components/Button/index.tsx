@@ -86,10 +86,10 @@ export const ButtonLight = styled(Base)`
   // transform: translateY(70px);
 
   &.btn-connect-wallet{
-    transform: translateY(50px);
+    transform: translateY(158px);
 
     @media (max-width: 414px){
-      transform: translateY(40px);
+      transform: translateY(115px);
     }
   }
 

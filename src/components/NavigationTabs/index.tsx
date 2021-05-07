@@ -45,10 +45,14 @@ const StyledNavLink = styled(NavLink).attrs({
 
 const ActiveText = styled.div`
   font-weight: 500;
-  font-size: 20px;
+  font-size: 24px;
   color: #fff;
   text-shadow: 2px 2px #1d1d1da1;
   font-weight: 700;
+
+  @media (max: width: 460px){
+
+  }
 `
 
 const StyledArrowLeft = styled(ArrowLeft)`

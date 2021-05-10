@@ -85,13 +85,7 @@ export const ButtonLight = styled(Base)`
   border-radius: 35px;
   // transform: translateY(70px);
 
-  &.btn-connect-wallet{
-    transform: translateY(158px);
-
-    @media (max-width: 414px){
-      transform: translateY(115px);
-    }
-  }
+  &.btn-connect-wallet{}
 
   @media (max-width: 414px){
     padding: 5px;

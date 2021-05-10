@@ -57,12 +57,6 @@ export const SectionBreak = styled.div`
 
 export const BottomGrouping = styled.div`
   text-align: center;
-  transform: translateY(152px);
-
-  @media (max-width: 414px){
-    transform: translateY(100px);
-  }
-
   .btn-connect-collect{
     margin: auto;
     border-radius: 40px;
